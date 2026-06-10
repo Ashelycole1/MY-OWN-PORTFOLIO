@@ -66,7 +66,7 @@ export const MY_STACK = {
         },
         {
             name: 'Agile',
-            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kanban/kanban-original.svg',
+            icon: 'https://cdn.simpleicons.org/scrumalliance',
         },
         {
             name: 'Flask',
