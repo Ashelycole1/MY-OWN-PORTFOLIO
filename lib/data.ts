@@ -78,7 +78,7 @@ export const MY_STACK = {
         },
         {
             name: 'Huawei Cloud',
-            icon: 'https://img.icons8.com/color/48/huawei.png',
+            icon: 'https://cdn.simpleicons.org/huawei',
         },
     ],
 };
