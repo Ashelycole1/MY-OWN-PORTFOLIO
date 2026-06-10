@@ -13,7 +13,7 @@ const Footer = () => {
                 </a>
 
                 <div className="text-muted-foreground text-sm leading-relaxed">
-                    <p>Design & Built by Niwashima Ashelycole</p>
+                    <p>Design & Built by Niwasiima Ashelycole</p>
                     <p className="mt-1">All rights reserved © {new Date().getFullYear()}</p>
                 </div>
             </div>
