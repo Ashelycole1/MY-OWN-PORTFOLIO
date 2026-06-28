@@ -9,7 +9,7 @@ export const GENERAL_INFO = {
 
 export const SOCIAL_LINKS = [
     { name: 'github', url: 'https://github.com/Ashelycole1' },
-    { name: 'linkedin', url: 'https://www.linkedin.com/in/niwasiima-ashelycole' },
+    { name: 'linkedin', url: 'https://www.linkedin.com/in/niwasiima-ashelycole-091698390' },
 ];
 
 export const MY_STACK = {
@@ -124,6 +124,7 @@ export const PROJECTS: IProject[] = [
             '/projects/images/law-buddy/law-buddy-3.jpeg',
             '/projects/images/law-buddy/law-buddy-4.jpeg',
         ],
+        liveUrl: 'https://uglawbuddy.vercel.app',
     },
     {
         title: 'Rafiki',
@@ -198,6 +199,88 @@ export const PROJECTS: IProject[] = [
             '/projects/images/mti-electronics-1.webp',
             '/projects/images/mti-electronics-2.webp',
         ],
+        liveUrl: 'https://ecofarmug.vercel.app',
+    },
+    {
+        title: 'DriveUG',
+        slug: 'driveug',
+        year: 2026,
+        description: `
+      Peer-to-peer car rental platform. <br/> <br/>
+      
+      Key Features:<br/>
+      <ul>
+        <li>🚗 P2P Rental: Connects car owners directly with renters.</li>
+        <li>🔐 Secure Platform: Verified users and secure payments.</li>
+      </ul>
+      `,
+        role: `
+      Full-Stack Developer <br/>
+      Led application development and UI design.
+      `,
+        techStack: [
+            'Next.js',
+            'React',
+            'Tailwind CSS',
+        ],
+        thumbnail: '/projects/thumbnail/law-buddy/law-buddy.jpeg',
+        longThumbnail: '/projects/long/law-buddy/law-buddy.jpeg',
+        images: [],
+        liveUrl: 'https://driveug.vercel.app',
+    },
+    {
+        title: 'Palg Drip',
+        slug: 'palg-drip',
+        year: 2026,
+        description: `
+      E-commerce platform. <br/> <br/>
+      
+      Key Features:<br/>
+      <ul>
+        <li>🛒 Shopping Cart: Seamless product browsing and checkout.</li>
+        <li>💳 Online Payments: Secure integrated payment gateways.</li>
+      </ul>
+      `,
+        role: `
+      Full-Stack Developer <br/>
+      Led application development and UI design.
+      `,
+        techStack: [
+            'Next.js',
+            'React',
+            'Tailwind CSS',
+        ],
+        thumbnail: '/projects/thumbnail/law-buddy/law-buddy.jpeg',
+        longThumbnail: '/projects/long/law-buddy/law-buddy.jpeg',
+        images: [],
+        liveUrl: 'https://palgdrip.vercel.app',
+    },
+    {
+        title: 'AccommodateMe',
+        slug: 'accommodate-me',
+        year: 2026,
+        description: `
+      Accommodation listing platform. <br/> <br/>
+      
+      Key Features:<br/>
+      <ul>
+        <li>🏠 Property Listings: Browse and list accommodations easily.</li>
+        <li>📅 Booking System: Integrated availability and booking.</li>
+      </ul>
+      `,
+        role: `
+      Full-Stack Developer <br/>
+      Led application development and UI design.
+      `,
+        techStack: [
+            'Next.js',
+            'React',
+            'Tailwind CSS',
+        ],
+        thumbnail: '/projects/thumbnail/law-buddy/law-buddy.jpeg',
+        longThumbnail: '/projects/long/law-buddy/law-buddy.jpeg',
+        images: [],
+        liveUrl: 'https://accomodateme.vercel.app',
     },
 ];
 
