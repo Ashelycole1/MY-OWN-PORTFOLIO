@@ -6,7 +6,7 @@ export const certifications: Certification[] = [
     name: "HCIA-AI V4.0 (Huawei Certified ICT Associate – Artificial Intelligence)",
     issuer: "Huawei",
     date: "2025-10",
-    badgeImage: undefined,
+    badgeImage: "/certifications/hcia-ai-v4.jpeg",
     verifyUrl: "/certifications/hcia-ai-v4.pdf",
   },
   {
@@ -14,7 +14,7 @@ export const certifications: Certification[] = [
     name: "HCIA-AI V4.0 – Colombia Training Program",
     issuer: "Huawei",
     date: "2025-10",
-    badgeImage: undefined,
+    badgeImage: "/certifications/hcia-ai-v4-colombia.jpeg",
     verifyUrl: "/certifications/hcia-ai-v4-colombia.pdf",
   },
   {
@@ -22,7 +22,7 @@ export const certifications: Certification[] = [
     name: "HCIA-Cloud Computing V5.5",
     issuer: "Huawei",
     date: "2025-10",
-    badgeImage: undefined,
+    badgeImage: "/certifications/hcia-cloud-computing-v5.jpeg",
     verifyUrl: "/certifications/hcia-cloud-computing-v5.pdf",
   },
   {
@@ -30,7 +30,7 @@ export const certifications: Certification[] = [
     name: "HCIA-Cloud Service V3.5",
     issuer: "Huawei",
     date: "2025-10",
-    badgeImage: undefined,
+    badgeImage: "/certifications/hcia-cloud-service-v3.jpeg",
     verifyUrl: "/certifications/hcia-cloud-service-v3.pdf",
   },
   {
@@ -62,7 +62,7 @@ export const certifications: Certification[] = [
     name: "Digital Entrepreneurship Skills",
     issuer: "AfriLabs",
     date: "2025-03",
-    badgeImage: undefined,
+    badgeImage: "/certifications/digital-entrepreneurship.jpeg",
     verifyUrl: "/certifications/digital-entrepreneurship.pdf",
   },
   {
@@ -78,7 +78,7 @@ export const certifications: Certification[] = [
     name: "Kuwaelimika Kwa Afrika",
     issuer: "Kuwaelimika",
     date: undefined,
-    badgeImage: undefined,
+    badgeImage: "/certifications/kuwaelimika.jpeg",
     verifyUrl: "/certifications/kuwaelimika.pdf",
   },
 ];
