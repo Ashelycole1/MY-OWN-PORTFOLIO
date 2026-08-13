@@ -28,10 +28,20 @@ export default function BlogPage() {
                 {posts.length === 0 ? (
                     <p className="text-muted-foreground">No posts yet. Check back soon.</p>
                 ) : (
-                    <ul className="divide-y divide-border">
+                    <ul className="space-y-16">
                         {posts.map((post) => (
-                            <li key={post.slug} className="py-8 group">
+                            <li key={post.slug} className="group">
                                 <Link href={`/blog/${post.slug}`} className="block">
+                                    {post.coverImage && (
+                                        <div className="relative w-full aspect-[16/7] mb-6 overflow-hidden rounded-xl border border-border">
+                                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                                            <img
+                                                src={post.coverImage}
+                                                alt={post.title}
+                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                            />
+                                        </div>
+                                    )}
                                     <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
                                         <time dateTime={post.date}>
                                             {new Date(post.date).toLocaleDateString('en-US', {

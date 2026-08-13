@@ -98,11 +98,11 @@ export const MY_STACK = {
         },
         {
             name: 'Antigravity',
-            icon: 'https://cdn.simpleicons.org/google',
+            icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/google.svg',
         },
         {
             name: 'Z.AI',
-            icon: 'https://cdn.simpleicons.org/openai',
+            icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/openai.svg',
         },
         {
             name: 'Vercel',
@@ -118,19 +118,19 @@ export const MY_STACK = {
         },
         {
             name: 'CMD',
-            icon: 'https://cdn.simpleicons.org/windowsterminal',
+            icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/windowsterminal.svg',
         },
         {
             name: 'MS Office',
-            icon: 'https://cdn.simpleicons.org/microsoftoffice/D83B01',
+            icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/microsoftoffice.svg',
         },
         {
             name: 'MS Access',
-            icon: 'https://cdn.simpleicons.org/microsoftaccess/A4373A',
+            icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/microsoftaccess.svg',
         },
         {
             name: 'Powerpoint',
-            icon: 'https://cdn.simpleicons.org/microsoftpowerpoint/B7472A',
+            icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/microsoftpowerpoint.svg',
         },
     ],
 };

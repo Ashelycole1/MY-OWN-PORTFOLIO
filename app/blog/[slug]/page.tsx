@@ -79,6 +79,17 @@ export default async function BlogPostPage({ params }: Props) {
                             </span>
                         ))}
                     </div>
+
+                    {post.coverImage && (
+                        <div className="relative w-full aspect-[16/7] mt-8 overflow-hidden rounded-xl border border-border">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src={post.coverImage}
+                                alt={post.title}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    )}
                 </header>
 
                 {/* Article body */}
