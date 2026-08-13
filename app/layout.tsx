@@ -29,6 +29,7 @@ const robotoFlex = Roboto_Flex({
 });
 
 export const metadata: Metadata = {
+    metadataBase: new URL('https://ashelycole.dev'),
     title: 'Niwasiima Ashelycole - Full Stack Developer Portfolio',
     description: 'Personal portfolio of Niwasiima Ashelycole, a passionate full-stack developer showcasing projects, skills, and experiences.',
     keywords: ['Niwasiima Ashelycole', 'Portfolio', 'Full Stack Developer', 'Software Engineer', 'Web Development'],

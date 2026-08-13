@@ -16,10 +16,13 @@ export const generateMetadata = async ({
     const project = PROJECTS.find((project) => project.slug === slug);
 
     return {
-        title: `${project?.title} - ${project?.techStack
-            .slice(0, 3)
-            .join(', ')}`,
-        description: project?.description,
+        title: `${project?.title} — Niwasiima Ashelycole`,
+        description: project?.problem,
+        openGraph: {
+            title: project?.title,
+            description: project?.problem,
+            type: 'website',
+        },
     } as Metadata;
 };
 
