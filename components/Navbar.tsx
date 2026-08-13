@@ -3,6 +3,8 @@ import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const MENU_LINKS = [
     { name: 'Home', url: '/' },
@@ -49,6 +51,7 @@ const Logo = () => (
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [activeLink, setActiveLink] = useState('/');
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const router = useRouter();
     const pathname = usePathname();
 
@@ -63,6 +66,7 @@ const Navbar = () => {
     }, [pathname]);
 
     const handleNav = (url: string) => {
+        setMobileMenuOpen(false);
         router.push(url);
         setActiveLink(url);
     };
@@ -76,19 +80,18 @@ const Navbar = () => {
 
     return (
         <header className="fixed top-0 inset-x-0 z-50 flex items-start justify-between px-5 md:px-10 pt-5 pointer-events-none">
-
+            
             {/* Left — logo */}
             <div className="pointer-events-auto">
                 <Logo />
             </div>
 
-            {/* Center — pill nav */}
+            {/* Center — Desktop pill nav */}
             <nav
                 className={cn(
-                    'pointer-events-auto absolute left-1/2 -translate-x-1/2 top-16 md:top-4',
-                    'flex items-center gap-1 px-2 py-1.5 rounded-full',
+                    'pointer-events-auto absolute left-1/2 -translate-x-1/2 top-4 hidden md:flex items-center gap-1 px-2 py-1.5 rounded-full',
                     'bg-[hsl(var(--background-light))/80] backdrop-blur-md border border-border/40',
-                    'shadow-lg transition-all duration-300 max-w-[90vw] md:max-w-none overflow-x-auto no-scrollbar',
+                    'shadow-lg transition-all duration-300',
                     scrolled && 'shadow-2xl border-border/60',
                 )}
             >
@@ -111,14 +114,14 @@ const Navbar = () => {
                 })}
             </nav>
 
-            {/* Right — social icon pills & resume button */}
-            <div className="pointer-events-auto flex items-center gap-3">
+            {/* Right — actions */}
+            <div className="pointer-events-auto flex items-center gap-2 md:gap-3">
                 <a
-                    href="/Niwasiima ashelycole CV 2026.pdf"
+                    href="/Niwasiima_Ashelycole_CV_2026.pdf"
                     target="_blank"
                     className="flex items-center gap-2 bg-[#E1F036] text-black px-4 py-2 rounded-full text-sm font-bold tracking-wider hover:brightness-105 transition-all shadow-lg whitespace-nowrap"
                 >
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 hidden sm:block">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                         <polyline points="7 10 12 15 17 10"></polyline>
                         <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -126,6 +129,15 @@ const Navbar = () => {
                     RESUME
                 </a>
 
+                {/* Mobile Hamburger Menu Toggle */}
+                <button
+                    className="md:hidden flex items-center justify-center size-9 rounded-full bg-[hsl(var(--background-light))/80] backdrop-blur-md border border-border/40 shadow-lg text-foreground hover:bg-muted transition-colors"
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                >
+                    {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+                </button>
+
+                {/* Desktop Socials */}
                 <div className="hidden sm:flex items-center gap-1.5 bg-[hsl(var(--background-light))/80] backdrop-blur-md border border-border/40 rounded-full px-2 py-1.5 shadow-lg">
                     {iconSocials.map((social) => (
                         <a
@@ -141,6 +153,51 @@ const Navbar = () => {
                     ))}
                 </div>
             </div>
+
+            {/* Mobile Dropdown Menu */}
+            <AnimatePresence>
+                {mobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2 }}
+                        className="pointer-events-auto absolute top-16 right-5 bg-[hsl(var(--background-light))/95] backdrop-blur-xl border border-border/40 p-2 rounded-2xl shadow-2xl flex flex-col gap-1 min-w-[200px]"
+                    >
+                        {MENU_LINKS.map((link) => {
+                            const isActive = activeLink === link.url || (link.url !== '/' && pathname === link.url);
+                            return (
+                                <button
+                                    key={link.name}
+                                    onClick={() => handleNav(link.url)}
+                                    className={cn(
+                                        'px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 text-left',
+                                        isActive
+                                            ? 'bg-foreground text-background'
+                                            : 'text-muted-foreground hover:text-foreground hover:bg-muted/50',
+                                    )}
+                                >
+                                    {link.name}
+                                </button>
+                            );
+                        })}
+                        <div className="flex items-center justify-center gap-4 mt-2 pt-3 border-t border-border/40">
+                            {iconSocials.map((social) => (
+                                <a
+                                    key={social.name}
+                                    href={social.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-muted-foreground hover:text-foreground transition-all duration-200"
+                                >
+                                    <SocialIcon name={social.name} />
+                                </a>
+                            ))}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
         </header>
     );
 };

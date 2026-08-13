@@ -43,11 +43,11 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
 
                     {/* Modal Content */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                        initial={{ opacity: 0, scale: 0.95, x: "-50%", y: "-45%" }}
+                        animate={{ opacity: 1, scale: 1, x: "-50%", y: "-50%" }}
+                        exit={{ opacity: 0, scale: 0.95, x: "-50%", y: "-45%" }}
                         transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-                        className="fixed left-1/2 top-1/2 z-50 w-full max-w-4xl -translate-x-1/2 -translate-y-1/2 p-4 md:p-0 max-h-[100dvh]"
+                        className="fixed left-1/2 top-1/2 z-50 w-full max-w-4xl p-4 md:p-0 max-h-[100dvh]"
                     >
                         <div className="relative flex flex-col max-h-[90dvh] w-full overflow-hidden rounded-xl bg-card border border-border shadow-2xl">
                             {/* Header */}
