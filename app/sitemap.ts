@@ -22,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     return [
         {
-            url: 'https://me.toinfinite.dev',
+            url: 'https://ashelycole.dev',
             lastModified: new Date(),
             changeFrequency: 'monthly' as const,
             priority: 1,
