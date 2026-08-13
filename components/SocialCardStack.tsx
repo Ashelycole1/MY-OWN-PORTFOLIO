@@ -49,8 +49,10 @@ const PlatformIcon = ({ icon }: { icon: string }) => {
     }
 };
 
-// Fan rotation angles for each card
-const FAN_ROTATIONS = [-12, -6, 0, 6, 12, 18];
+// Fan rotation angles and X offsets for each card
+const FAN_ROTATIONS = [-20, -10, 0, 10, 20];
+const FAN_X_OFFSETS = [-140, -70, 0, 70, 140];
+const FAN_Y_OFFSETS = [20, 5, 0, 5, 20]; // to create an arc
 
 const SocialCardStack = () => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -114,11 +116,12 @@ const SocialCardStack = () => {
                                     }}
                                     initial={{ rotate: baseRotation }}
                                     animate={{
-                                        rotate: isHovered ? 0 : isAnyHovered ? baseRotation * 1.2 : baseRotation,
-                                        y: isHovered ? -28 : 0,
-                                        scale: isHovered ? 1.06 : isAnyHovered ? 0.97 : 1,
+                                        rotate: isHovered ? 0 : isAnyHovered ? baseRotation * 1.1 : baseRotation,
+                                        x: isHovered ? 0 : FAN_X_OFFSETS[idx] || 0,
+                                        y: isHovered ? -28 : (FAN_Y_OFFSETS[idx] || 0),
+                                        scale: isHovered ? 1.1 : isAnyHovered ? 0.95 : 1,
                                     }}
-                                    transition={{ type: 'spring', damping: 18, stiffness: 220 }}
+                                    transition={{ type: 'spring', damping: 20, stiffness: 300 }}
                                     onHoverStart={() => setHoveredIndex(idx)}
                                     onHoverEnd={() => setHoveredIndex(null)}
                                 >

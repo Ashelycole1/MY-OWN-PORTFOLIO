@@ -71,22 +71,21 @@ const Skills = () => {
                                 </p>
                             </div>
 
-                            <div className="sm:col-span-7 flex gap-x-11 gap-y-9 flex-wrap">
+                            <div className="sm:col-span-7 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
                                 {value.map((item) => (
                                     <div
-                                        className="slide-up flex gap-3.5 items-center leading-none"
+                                        className="slide-up flex gap-3 items-center leading-none"
                                         key={item.name}
                                     >
-                                        <div>
+                                        <div className="relative size-6 flex items-center justify-center shrink-0">
                                             <Image
                                                 src={item.icon}
                                                 alt={item.name}
-                                                width="40"
-                                                height="40"
-                                                className="max-h-10"
+                                                fill
+                                                className="object-contain"
                                             />
                                         </div>
-                                        <span className="text-2xl capitalize">
+                                        <span className="text-lg text-muted-foreground hover:text-foreground transition-colors cursor-default">
                                             {item.name}
                                         </span>
                                     </div>

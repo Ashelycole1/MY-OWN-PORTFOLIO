@@ -111,20 +111,35 @@ const Navbar = () => {
                 })}
             </nav>
 
-            {/* Right — social icon pills */}
-            <div className="pointer-events-auto flex items-center gap-1.5 bg-[hsl(var(--background-light))/80] backdrop-blur-md border border-border/40 rounded-full px-2 py-1.5 shadow-lg">
-                {iconSocials.map((social) => (
-                    <a
-                        key={social.name}
-                        href={social.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center size-7 rounded-full text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-200"
-                        aria-label={social.name}
-                    >
-                        <SocialIcon name={social.name} />
-                    </a>
-                ))}
+            {/* Right — social icon pills & resume button */}
+            <div className="pointer-events-auto flex items-center gap-3">
+                <a
+                    href="/resume.pdf"
+                    target="_blank"
+                    className="flex items-center gap-2 bg-[#E1F036] text-black px-4 py-2 rounded-full text-sm font-bold tracking-wider hover:brightness-105 transition-all shadow-lg"
+                >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    RESUME
+                </a>
+
+                <div className="hidden sm:flex items-center gap-1.5 bg-[hsl(var(--background-light))/80] backdrop-blur-md border border-border/40 rounded-full px-2 py-1.5 shadow-lg">
+                    {iconSocials.map((social) => (
+                        <a
+                            key={social.name}
+                            href={social.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center size-7 rounded-full text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-200"
+                            aria-label={social.name}
+                        >
+                            <SocialIcon name={social.name} />
+                        </a>
+                    ))}
+                </div>
             </div>
         </header>
     );
