@@ -61,7 +61,7 @@ const AboutMe = () => {
                             </p>
                             
                             <p className="slide-up-and-fade leading-relaxed">
-                                My approach focuses on creating scalable, high-performing solutions tailored to both user needs and business objectives. By prioritizing performance, accessibility, and responsiveness, I strive to deliver experiences that not only engage users but also drive tangible results.
+                                My work spans frontend and backend development, along with a growing focus on artificial intelligence and system architecture. I enjoy designing complete solutions, from building user interfaces to developing backend services and APIs.
                             </p>
                             
                             <div className="slide-up-and-fade mt-10 border-l-4 border-[#E1F036] pl-6 py-2">

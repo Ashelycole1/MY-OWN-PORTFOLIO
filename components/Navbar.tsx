@@ -85,10 +85,10 @@ const Navbar = () => {
             {/* Center — pill nav */}
             <nav
                 className={cn(
-                    'pointer-events-auto absolute left-1/2 -translate-x-1/2 top-4',
+                    'pointer-events-auto absolute left-1/2 -translate-x-1/2 top-16 md:top-4',
                     'flex items-center gap-1 px-2 py-1.5 rounded-full',
                     'bg-[hsl(var(--background-light))/80] backdrop-blur-md border border-border/40',
-                    'shadow-lg transition-all duration-300',
+                    'shadow-lg transition-all duration-300 max-w-[90vw] md:max-w-none overflow-x-auto no-scrollbar',
                     scrolled && 'shadow-2xl border-border/60',
                 )}
             >
@@ -99,7 +99,7 @@ const Navbar = () => {
                             key={link.name}
                             onClick={() => handleNav(link.url)}
                             className={cn(
-                                'px-3.5 py-1.5 rounded-full text-sm font-medium transition-all duration-200',
+                                'px-3.5 py-1.5 rounded-full text-sm font-medium transition-all duration-200 whitespace-nowrap',
                                 isActive
                                     ? 'bg-foreground text-background'
                                     : 'text-muted-foreground hover:text-foreground hover:bg-muted',
@@ -114,9 +114,9 @@ const Navbar = () => {
             {/* Right — social icon pills & resume button */}
             <div className="pointer-events-auto flex items-center gap-3">
                 <a
-                    href="/resume.pdf"
+                    href="/Niwasiima ashelycole CV 2026.pdf"
                     target="_blank"
-                    className="flex items-center gap-2 bg-[#E1F036] text-black px-4 py-2 rounded-full text-sm font-bold tracking-wider hover:brightness-105 transition-all shadow-lg"
+                    className="flex items-center gap-2 bg-[#E1F036] text-black px-4 py-2 rounded-full text-sm font-bold tracking-wider hover:brightness-105 transition-all shadow-lg whitespace-nowrap"
                 >
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>

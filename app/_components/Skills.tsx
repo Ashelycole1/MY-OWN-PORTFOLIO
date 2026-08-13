@@ -83,6 +83,7 @@ const Skills = () => {
                                                 alt={item.name}
                                                 fill
                                                 className="object-contain"
+                                                unoptimized
                                             />
                                         </div>
                                         <span className="text-lg text-muted-foreground hover:text-foreground transition-colors cursor-default">
