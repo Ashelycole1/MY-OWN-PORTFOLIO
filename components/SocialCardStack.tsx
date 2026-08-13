@@ -66,7 +66,7 @@ const SocialCardStack = () => {
     }, []);
 
     return (
-        <section id="social" className="py-20 md:py-32 w-full max-w-[1200px] mx-auto px-5 lg:px-10">
+        <section id="contact" className="py-20 md:py-32 w-full max-w-[1200px] mx-auto px-5 lg:px-10">
             <div className="flex justify-between items-end mb-14">
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-anton uppercase text-foreground">
                     Find Me Online
