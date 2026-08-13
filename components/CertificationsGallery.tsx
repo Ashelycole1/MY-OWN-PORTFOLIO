@@ -21,29 +21,32 @@ const CertificationsGallery = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
-                        transition={{ duration: 0.5, delay: idx * 0.1 }}
+                        transition={{ duration: 0.5, delay: idx * 0.08 }}
                         whileHover={{ y: -8, scale: 1.02 }}
-                        className="bg-card border border-border/50 rounded-2xl overflow-hidden cursor-pointer group hover:border-primary/50 transition-colors"
+                        className={`bg-card border border-border/50 rounded-2xl overflow-hidden group hover:border-primary/50 transition-colors ${cert.verifyUrl ? 'cursor-pointer' : ''}`}
                         onClick={() => cert.verifyUrl && window.open(cert.verifyUrl, '_blank')}
                     >
                         <div className="aspect-[4/3] bg-muted/30 relative flex items-center justify-center p-6 border-b border-border/30">
-                            {cert.badgeImage && !cert.badgeImage.includes('TODO') ? (
+                            {cert.badgeImage ? (
                                 <div className="relative w-full h-full">
                                     <Image
                                         src={cert.badgeImage}
                                         alt={cert.name}
                                         fill
                                         className="object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-500"
-                                        onError={(e) => {
-                                            // Fallback for broken images
-                                            (e.target as HTMLImageElement).src = '/images/placeholder.svg';
-                                            (e.target as HTMLImageElement).style.opacity = '0.5';
-                                        }}
+                                        unoptimized
                                     />
                                 </div>
                             ) : (
-                                <div className="text-muted-foreground/50 text-sm font-medium uppercase tracking-wider text-center">
-                                    Badge <br/> Pending
+                                <div className="flex flex-col items-center gap-3">
+                                    <div className="w-16 h-16 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-2xl font-anton text-primary">
+                                        {cert.issuer.charAt(0)}
+                                    </div>
+                                    {cert.verifyUrl && (
+                                        <span className="text-xs text-primary/60 uppercase tracking-widest font-medium">
+                                            View Certificate
+                                        </span>
+                                    )}
                                 </div>
                             )}
                         </div>
@@ -51,12 +54,12 @@ const CertificationsGallery = () => {
                             <p className="text-xs font-semibold text-primary/80 uppercase tracking-wider mb-2">
                                 {cert.issuer}
                             </p>
-                            <h3 className="font-semibold text-lg leading-tight mb-2 group-hover:text-primary transition-colors">
+                            <h3 className="font-semibold text-base leading-tight mb-2 group-hover:text-primary transition-colors">
                                 {cert.name}
                             </h3>
                             {cert.date && (
                                 <p className="text-sm text-muted-foreground">
-                                    {cert.date}
+                                    {new Date(cert.date + '-01').toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
                                 </p>
                             )}
                         </div>
@@ -68,3 +71,4 @@ const CertificationsGallery = () => {
 };
 
 export default CertificationsGallery;
+
