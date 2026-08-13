@@ -1,5 +1,4 @@
 'use client';
-import parse from 'html-react-parser';
 import ArrowAnimation from '@/components/ArrowAnimation';
 import TransitionLink from '@/components/TransitionLink';
 import { IProject } from '@/types';
@@ -133,42 +132,59 @@ const ProjectDetails = ({ project }: Props) => {
                         </div>
 
                         <div className="max-w-[635px] space-y-7 pb-20 mx-auto">
+                            {/* The Problem */}
                             <div className="fade-in-later">
                                 <p className="text-muted-foreground font-anton mb-3">
-                                    Year
+                                    The Problem
                                 </p>
-
-                                <div className="text-lg">{project.year}</div>
+                                <div className="text-lg">
+                                    {project.problem}
+                                </div>
                             </div>
+                            
+                            {/* The Constraints */}
                             <div className="fade-in-later">
                                 <p className="text-muted-foreground font-anton mb-3">
-                                    Tech & Technique
+                                    The Constraints
                                 </p>
+                                <div className="text-lg">
+                                    {project.constraint}
+                                </div>
+                            </div>
 
+                            {/* What I Built */}
+                            <div className="fade-in-later">
+                                <p className="text-muted-foreground font-anton mb-3">
+                                    What I Built
+                                </p>
+                                <ul className="text-lg list-disc list-outside ml-5 space-y-2">
+                                    {project.build.map((item, index) => (
+                                        <li key={index}>{item}</li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* The Result */}
+                            {project.result && (
+                                <div className="fade-in-later">
+                                    <p className="text-muted-foreground font-anton mb-3">
+                                        The Result
+                                    </p>
+                                    <div className="text-lg">
+                                        {project.result}
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* Tech Stack */}
+                            <div className="fade-in-later">
+                                <p className="text-muted-foreground font-anton mb-3">
+                                    Tech Stack
+                                </p>
                                 <div className="text-lg">
                                     {project.techStack.join(', ')}
                                 </div>
                             </div>
-                            <div className="fade-in-later">
-                                <p className="text-muted-foreground font-anton mb-3">
-                                    Description
-                                </p>
-
-                                <div className="text-lg prose-xl markdown-text">
-                                    {parse(project.description)}
-                                </div>
-                            </div>
-                            {project.role && (
-                                <div className="fade-in-later">
-                                    <p className="text-muted-foreground font-anton mb-3">
-                                        My Role
-                                    </p>
-
-                                    <div className="text-lg">
-                                        {parse(project.role)}
-                                    </div>
-                                </div>
-                            )}
                         </div>
 
                         <ArrowAnimation />

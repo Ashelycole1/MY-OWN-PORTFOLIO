@@ -10,6 +10,8 @@ const COLORS = [
     'bg-blue-500 text-white',
     'bg-teal-500 text-black',
     'bg-indigo-500 text-white',
+    'bg-purple-500 text-white',
+    'bg-pink-500 text-white',
 ];
 
 const MENU_LINKS = [
@@ -26,8 +28,16 @@ const MENU_LINKS = [
         url: '/#my-experience',
     },
     {
+        name: 'Certifications',
+        url: '/#certifications',
+    },
+    {
         name: 'Projects',
         url: '/#selected-projects',
+    },
+    {
+        name: 'Blog',
+        url: '/blog',
     },
 ];
 

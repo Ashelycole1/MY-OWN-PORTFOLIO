@@ -9,7 +9,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     platform: "LinkedIn",
-    url: "", // TODO: add LinkedIn profile URL
+    url: "https://www.linkedin.com/in/niwasiima-ashelycole-091698390",
     icon: "linkedin",
     brandColor: "#0A66C2",
   },

@@ -1,7 +1,4 @@
 export type Next_Page_Url = string;
-// UrlObject;
-// | __next_route_internal_types__.StaticRoutes
-// | __next_route_internal_types__.DynamicRoutes;
 
 export type Variant =
     | 'primary'
@@ -18,8 +15,10 @@ export type Variant =
 export interface IProject {
     title: string;
     year: number;
-    description: string;
-    role: string;
+    problem: string;
+    constraint: string;
+    build: string[];
+    result?: string;
     techStack: string[];
     thumbnail: string;
     longThumbnail: string;

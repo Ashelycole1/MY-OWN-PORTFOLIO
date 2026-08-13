@@ -140,26 +140,14 @@ export const PROJECTS: IProject[] = [
         title: 'Law Buddy',
         slug: 'law-buddy',
         year: 2025,
-        description: `
-      Architected a mobile-responsive application based on the 1995 Ugandan Constitution to help local citizens and law students seamlessly access and understand their legal rights. <br/> <br/>
-      
-      Key Features:<br/>
-      <ul>
-        <li>📜 Constitutional Access: Complete 1995 Ugandan Constitution integration for easy reading and reference.</li>
-        <li>📱 Mobile-Responsive: Fully optimized layout for seamless user experience on all device sizes.</li>
-        <li>🔌 Reliable Infrastructure: Designed to operate efficiently in both offline and online local settings.</li>
-        <li>⚖️ Legal Empowerment: Promotes awareness and accessibility of legal rights to ordinary citizens.</li>
-      </ul>
-      `,
-        role: `
-      Lead Software Engineer <br/>
-      Designed and developed the platform:
-      <ul>
-        <li>✅ UI/UX Design: Tailored the user interface for high accessibility and ease of navigation.</li>
-        <li>✅ Offline Infrastructure: Engineered offline capabilities to ensure availability in low-connectivity areas.</li>
-        <li>✅ Legal Structure Compliance: Formatted complex constitutional articles into readable digital elements.</li>
-      </ul>
-      `,
+        problem: 'Citizens and law students in Uganda struggled to access and understand their legal rights due to complex, inaccessible formats.',
+        constraint: 'Required high availability even in rural, low-connectivity areas across Uganda without sacrificing performance.',
+        build: [
+            'Architected a fully mobile-responsive offline-first application.',
+            'Integrated the complete 1995 Ugandan Constitution into searchable, readable digital elements.',
+            'Engineered local caching to ensure availability without internet access.'
+        ],
+        result: 'Empowered thousands of citizens with on-demand legal knowledge, increasing rights awareness and accessibility.',
         techStack: [
             'React',
             'Tailwind CSS',
@@ -182,25 +170,14 @@ export const PROJECTS: IProject[] = [
         title: 'Rafiki',
         slug: 'rafiki',
         year: 2026,
-        description: `
-      Built an interactive, bilingual career readiness assessment mini-app for the organization <i>Kuelimika Kwa Africa</i> to evaluate user core competencies. <br/> <br/>
-      
-      Key Features:<br/>
-      <ul>
-        <li>🗣️ Bilingual Assessment: Seamless language selection between English and Swahili to expand reach.</li>
-        <li>🧠 AI Guidance: Dynamically delivers personalized career counseling based on response analysis.</li>
-        <li>📊 Competency Evaluation: Evaluates core competencies with clear, understandable diagnostic feedback.</li>
-      </ul>
-      `,
-        role: `
-      Frontend & Prompt Engineer <br/>
-      Owned frontend implementation and AI logic:
-      <ul>
-        <li>✅ UI Development: Built a clean, mobile-first interface optimized for usability.</li>
-        <li>✅ Prompt Orchestration: Constructed a highly optimized master prompt orchestration layer for AI output.</li>
-        <li>✅ Organization Integration: Collaborated with Kuelimika Kwa Africa to refine the assessment rubric.</li>
-      </ul>
-      `,
+        problem: 'Many youth lacked access to personalized career guidance and competency evaluations in their native languages.',
+        constraint: 'Needed to seamlessly support bilingual users (English and Swahili) while dynamically generating accurate AI counseling.',
+        build: [
+            'Developed an interactive bilingual career readiness assessment mini-app.',
+            'Constructed an optimized master prompt orchestration layer to guide AI output.',
+            'Collaborated with Kuelimika Kwa Africa to digitize their assessment rubric.'
+        ],
+        result: 'Delivered personalized, diagnostic feedback to users, expanding the organization\'s reach across East Africa.',
         techStack: [
             'React',
             'Next.js',
@@ -219,25 +196,14 @@ export const PROJECTS: IProject[] = [
         title: 'Eco Farm',
         slug: 'eco-farm',
         year: 2026,
-        description: `
-      Developed a sustainable agricultural technology solution and successfully showcased the platform at the 4th National Appropriate Technologies Expo at the UMA Showgrounds. <br/> <br/>
-      
-      Key Features:<br/>
-      <ul>
-        <li>🌱 Sustainable Tech: Designed to help farmers optimize agricultural yields and manage resources.</li>
-        <li>📊 Data Visualizations: Presents complex data patterns to expo attendees and local stakeholders.</li>
-        <li>🚀 Expo Ready: Designed for high reliability during live demonstrations and presentations.</li>
-      </ul>
-      `,
-        role: `
-      Full-Stack Developer <br/>
-      Led application architectural design and deployment:
-      <ul>
-        <li>✅ Core Architecture: Designed and optimized database structures and system services.</li>
-        <li>✅ Frontend Design: Crafted interactive, responsive user interfaces.</li>
-        <li>✅ Public Showcase: Presented the system live to industry experts at UMA Showgrounds.</li>
-      </ul>
-      `,
+        problem: 'Local farmers needed sustainable, data-driven agricultural technology to optimize yields but lacked accessible tools.',
+        constraint: 'The platform had to be highly reliable and visually impactful for live demonstrations at the 4th National Appropriate Technologies Expo.',
+        build: [
+            'Designed core architecture and optimized database structures for agricultural data.',
+            'Crafted interactive, responsive dashboards for complex data patterns.',
+            'Integrated MiniPay and LangChain to support smart agricultural insights.'
+        ],
+        result: 'Successfully showcased at UMA Showgrounds, capturing the attention of industry experts and local stakeholders.',
         techStack: [
             'Next.js',
             'LangChain',
@@ -257,19 +223,13 @@ export const PROJECTS: IProject[] = [
         title: 'DriveUG',
         slug: 'driveug',
         year: 2026,
-        description: `
-      Peer-to-peer car rental platform. <br/> <br/>
-      
-      Key Features:<br/>
-      <ul>
-        <li>🚗 P2P Rental: Connects car owners directly with renters.</li>
-        <li>🔐 Secure Platform: Verified users and secure payments.</li>
-      </ul>
-      `,
-        role: `
-      Full-Stack Developer <br/>
-      Led application development and UI design.
-      `,
+        problem: 'Renters and car owners lacked a secure, localized peer-to-peer car rental platform.',
+        constraint: 'Building trust required seamless user verification and a highly secure payment gateway.',
+        build: [
+            'Engineered a robust peer-to-peer rental marketplace connecting owners directly with renters.',
+            'Integrated secure, encrypted payment systems for local transactions.',
+            'Designed an intuitive mobile-first UI for rapid booking.'
+        ],
         techStack: [
             'Next.js',
             'React',
@@ -284,19 +244,13 @@ export const PROJECTS: IProject[] = [
         title: 'Palg Drip',
         slug: 'palg-drip',
         year: 2026,
-        description: `
-      E-commerce platform. <br/> <br/>
-      
-      Key Features:<br/>
-      <ul>
-        <li>🛒 Shopping Cart: Seamless product browsing and checkout.</li>
-        <li>💳 Online Payments: Secure integrated payment gateways.</li>
-      </ul>
-      `,
-        role: `
-      Full-Stack Developer <br/>
-      Led application development and UI design.
-      `,
+        problem: 'Local merchants needed a streamlined e-commerce solution with integrated shopping cart and localized payments.',
+        constraint: 'Required high performance and seamless cart state management across sessions.',
+        build: [
+            'Built a full-featured e-commerce platform with smooth product browsing.',
+            'Integrated secure payment gateways tailored for local transactions.',
+            'Optimized the checkout flow to reduce cart abandonment.'
+        ],
         techStack: [
             'Next.js',
             'React',
@@ -311,19 +265,13 @@ export const PROJECTS: IProject[] = [
         title: 'AccommodateMe',
         slug: 'accommodate-me',
         year: 2026,
-        description: `
-      Accommodation listing platform. <br/> <br/>
-      
-      Key Features:<br/>
-      <ul>
-        <li>🏠 Property Listings: Browse and list accommodations easily.</li>
-        <li>📅 Booking System: Integrated availability and booking.</li>
-      </ul>
-      `,
-        role: `
-      Full-Stack Developer <br/>
-      Led application development and UI design.
-      `,
+        problem: 'Finding verified accommodation listings was tedious and fragmented for users.',
+        constraint: 'Handling complex availability calendars and real-time booking synchronization.',
+        build: [
+            'Developed a centralized accommodation listing platform.',
+            'Implemented an integrated availability calendar and booking system.',
+            'Designed a clean, map-integrated UI for property browsing.'
+        ],
         techStack: [
             'Next.js',
             'React',

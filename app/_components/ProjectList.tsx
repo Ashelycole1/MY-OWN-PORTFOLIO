@@ -1,6 +1,7 @@
 'use client';
 import SectionTitle from '@/components/SectionTitle';
 import { PROJECTS } from '@/lib/data';
+import { IProject } from '@/types';
 import { cn } from '@/lib/utils';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -8,6 +9,7 @@ import { ScrollTrigger } from 'gsap/all';
 import Image from 'next/image';
 import React, { useRef, useState, MouseEvent } from 'react';
 import Project from './Project';
+import ProjectModal from '@/components/ProjectModal';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -19,6 +21,17 @@ const ProjectList = () => {
     const [selectedProject, setSelectedProject] = useState<string | null>(
         PROJECTS[0].slug,
     );
+    const [modalProject, setModalProject] = useState<IProject | null>(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleOpenModal = (project: IProject) => {
+        setModalProject(project);
+        setIsModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+    };
 
     // update imageRef.current href based on the cursor hover position
     // also update image position
@@ -104,6 +117,7 @@ const ProjectList = () => {
     };
 
     return (
+        <>
         <section className="pb-section" id="selected-projects">
             <div className="container">
                 <SectionTitle title="SELECTED PROJECTS" />
@@ -145,6 +159,7 @@ const ProjectList = () => {
                                 project={project}
                                 selectedProject={selectedProject}
                                 onMouseEnter={handleMouseEnter}
+                                onOpenModal={handleOpenModal}
                                 key={project.slug}
                             />
                         ))}
@@ -152,6 +167,13 @@ const ProjectList = () => {
                 </div>
             </div>
         </section>
+
+        <ProjectModal
+            project={modalProject}
+            isOpen={isModalOpen}
+            onClose={handleCloseModal}
+        />
+        </>
     );
 };
 

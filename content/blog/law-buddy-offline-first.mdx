@@ -1,0 +1,45 @@
+---
+title: "Building Offline-First: How Law Buddy Works Without Internet"
+date: "2026-08-13"
+excerpt: "Most legal info apps assume a stable connection. Law Buddy was built for Uganda's reality — offline-capable, fast, and accessible to anyone with a mid-range Android."
+tags: ["react", "offline", "pwa", "uganda", "legal-tech"]
+coverImage: "/blog/law-buddy-cover.png"
+---
+
+Legal information should not require a stable internet connection to access. In Uganda, where large swaths of the population live in areas with unreliable connectivity, that assumption is a barrier — and Law Buddy was built to remove it.
+
+## The constraint that defined the architecture
+
+The 1995 Ugandan Constitution is the core of the app. It is a fixed document: it does not change day-to-day, it does not require a live API, and it can be bundled entirely. That single fact made offline-first not just feasible but the obvious right choice.
+
+The design principle: **if you download the app once, it should work forever without touching the network.**
+
+## How offline storage works
+
+Law Buddy uses the browser's built-in storage APIs — specifically a combination of service workers and IndexedDB — to cache the entire constitution on first load. After that initial fetch:
+
+- **Service workers** intercept all network requests and serve from cache.
+- **IndexedDB** stores the searchable article data, enabling full-text search without any server round-trips.
+- The app shell (UI chrome, fonts, styles) is pre-cached at install time.
+
+The result: after a single online visit, the app is fully functional on a plane, in a rural area, or anywhere with zero signal.
+
+## Structuring 275 articles for readability
+
+The 1995 Ugandan Constitution has 287 articles across 19 chapters, plus schedules. Dumping this as raw text would be unusable. Law Buddy structures it as:
+
+- Chapter navigation (sidebar/drawer)
+- Article-level deep links (shareable URLs like `/article/29` for Freedom of Expression)
+- Search that matches article titles and full text
+
+Each article is stored as a discrete record in IndexedDB, which makes both navigation and search fast regardless of connection state.
+
+## What I learned
+
+Building without a network dependency forced a different kind of discipline. Every feature had to answer the question: *does this work offline?* That filter eliminated a lot of unnecessary complexity and kept the bundle lean.
+
+The other lesson: accessibility and offline availability are deeply related. Offline-first is, in many contexts, just another word for accessible.
+
+---
+
+*Live: [uglawbuddy.vercel.app](https://uglawbuddy.vercel.app)*
