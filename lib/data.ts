@@ -15,70 +15,122 @@ export const SOCIAL_LINKS = [
 export const MY_STACK = {
     programming: [
         {
-            name: 'Java',
-            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
-        },
-        {
             name: 'Python',
-            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg',
         },
         {
-            name: 'JavaScript',
-            icon: '/logo/js.png',
+            name: 'JS',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',
         },
         {
-            name: 'HTML/CSS',
-            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
-        },
-        {
-            name: 'SQL',
-            icon: '/logo/mysql.svg',
-        },
-        {
-            name: 'Node.js',
-            icon: '/logo/node.png',
-        },
-        {
-            name: 'React.js',
-            icon: '/logo/react.png',
+            name: 'TS',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg',
         },
         {
             name: 'C',
-            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg',
+        },
+        {
+            name: 'HTML',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg',
+        },
+        {
+            name: 'CSS',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg',
+        },
+        {
+            name: 'Bash',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg',
+        },
+        {
+            name: 'React',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+        },
+        {
+            name: 'Next.js',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg',
+        },
+        {
+            name: 'Node',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',
+        },
+        {
+            name: 'MySQL',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg',
+        },
+        {
+            name: 'PostgreSQL',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg',
         },
     ],
     tools: [
         {
-            name: 'Android Studio',
-            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg',
+            name: 'Clerk',
+            icon: 'https://cdn.simpleicons.org/clerk/6C47FF',
         },
         {
-            name: 'AWS',
-            icon: '/logo/aws.png',
+            name: 'Firebase',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg',
+        },
+        {
+            name: 'Supabase',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg',
         },
         {
             name: 'Git',
-            icon: '/logo/git.png',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg',
         },
         {
-            name: 'Bootstrap',
-            icon: '/logo/bootstrap.svg',
+            name: 'Github',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg',
         },
         {
-            name: 'Agile',
-            icon: 'https://cdn.simpleicons.org/scrumalliance',
+            name: 'VS Code',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg',
         },
         {
-            name: 'Flask',
-            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg',
+            name: 'Cursor',
+            icon: 'https://cdn.simpleicons.org/cursor',
         },
         {
-            name: 'Kubernetes',
-            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg',
+            name: 'Claude Code',
+            icon: 'https://cdn.simpleicons.org/anthropic',
         },
         {
-            name: 'Huawei Cloud',
-            icon: 'https://cdn.simpleicons.org/huawei',
+            name: 'Antigravity',
+            icon: 'https://cdn.simpleicons.org/google',
+        },
+        {
+            name: 'Z.AI',
+            icon: 'https://cdn.simpleicons.org/openai',
+        },
+        {
+            name: 'Vercel',
+            icon: 'https://cdn.simpleicons.org/vercel',
+        },
+        {
+            name: 'Netlify',
+            icon: 'https://cdn.simpleicons.org/netlify/00C7B7',
+        },
+        {
+            name: 'Figma',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg',
+        },
+        {
+            name: 'CMD',
+            icon: 'https://cdn.simpleicons.org/windowsterminal',
+        },
+        {
+            name: 'MS Office',
+            icon: 'https://cdn.simpleicons.org/microsoftoffice/D83B01',
+        },
+        {
+            name: 'MS Access',
+            icon: 'https://cdn.simpleicons.org/microsoftaccess/A4373A',
+        },
+        {
+            name: 'Powerpoint',
+            icon: 'https://cdn.simpleicons.org/microsoftpowerpoint/B7472A',
         },
     ],
 };
@@ -223,8 +275,8 @@ export const PROJECTS: IProject[] = [
             'React',
             'Tailwind CSS',
         ],
-        thumbnail: '/projects/thumbnail/law-buddy/law-buddy.jpeg',
-        longThumbnail: '/projects/long/law-buddy/law-buddy.jpeg',
+        thumbnail: '/projects/thumbnail/TODO-replace-with-real-screenshot.jpg',
+        longThumbnail: '/projects/long/TODO-replace-with-real-screenshot.jpg',
         images: [],
         liveUrl: 'https://driveug.vercel.app',
     },
@@ -250,8 +302,8 @@ export const PROJECTS: IProject[] = [
             'React',
             'Tailwind CSS',
         ],
-        thumbnail: '/projects/thumbnail/law-buddy/law-buddy.jpeg',
-        longThumbnail: '/projects/long/law-buddy/law-buddy.jpeg',
+        thumbnail: '/projects/thumbnail/TODO-replace-with-real-screenshot.jpg',
+        longThumbnail: '/projects/long/TODO-replace-with-real-screenshot.jpg',
         images: [],
         liveUrl: 'https://palgdrip.vercel.app',
     },
@@ -277,8 +329,8 @@ export const PROJECTS: IProject[] = [
             'React',
             'Tailwind CSS',
         ],
-        thumbnail: '/projects/thumbnail/law-buddy/law-buddy.jpeg',
-        longThumbnail: '/projects/long/law-buddy/law-buddy.jpeg',
+        thumbnail: '/projects/thumbnail/TODO-replace-with-real-screenshot.jpg',
+        longThumbnail: '/projects/long/TODO-replace-with-real-screenshot.jpg',
         images: [],
         liveUrl: 'https://accomodateme.vercel.app',
     },

@@ -50,8 +50,7 @@ const Banner = () => {
                         <span className="font-medium text-foreground">
                             Niwasiima Ashelycole
                         </span>
-                        . A creative Software Engineer with 2+ years of
-                        experience in building high-performance, scalable, and robust software solutions.
+                        . Software Engineer building offline-first, multilingual, and financial-access tools for East Africa. Currently building at RENOA for Africa.
                     </p>
                     <Button
                         as="link"

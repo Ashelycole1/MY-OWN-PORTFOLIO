@@ -29,8 +29,23 @@ const robotoFlex = Roboto_Flex({
 });
 
 export const metadata: Metadata = {
-    title: 'Portfolio - Niwasiima Ashelycole',
-    description: 'Personal portfolio of Niwasiima Ashelycole',
+    title: 'Niwasiima Ashelycole - Full Stack Developer Portfolio',
+    description: 'Personal portfolio of Niwasiima Ashelycole, a passionate full-stack developer showcasing projects, skills, and experiences.',
+    keywords: ['Niwasiima Ashelycole', 'Portfolio', 'Full Stack Developer', 'Software Engineer', 'Web Development'],
+    authors: [{ name: 'Niwasiima Ashelycole' }],
+    openGraph: {
+        title: 'Niwasiima Ashelycole - Full Stack Developer Portfolio',
+        description: 'Personal portfolio of Niwasiima Ashelycole, a passionate full-stack developer showcasing projects, skills, and experiences.',
+        url: 'https://ashelycole.dev',
+        siteName: 'Niwasiima Ashelycole Portfolio',
+        locale: 'en_US',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Niwasiima Ashelycole - Full Stack Developer',
+        description: 'Personal portfolio of Niwasiima Ashelycole.',
+    },
 };
 
 export default function RootLayout({
@@ -61,15 +76,7 @@ export default function RootLayout({
                         duration: 1.4,
                     }}
                 >
-                    {/* <a
-                        href="https://forms.gle/t73XYJgWD5cJNr6e8"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-4 block bg-black text-center z-[1] text-sm py-2 hover:text-primary transition-all"
-                    >
-                        Frontend dev? I&apos;ll help you polish your resume —
-                        completely free.
-                    </a> */}
+
                     <Navbar />
                     <main>{children}</main>
                     <Footer />

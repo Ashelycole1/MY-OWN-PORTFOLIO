@@ -1,0 +1,43 @@
+---
+title: "Building a 4-Step Booking Flow in Plain HTML/CSS/JS: The Velour Salon Case Study"
+date: "2026-08-11"
+excerpt: "A technical assessment build for a salon booking site — no framework, no build step, just fast, accessible, 93+ Lighthouse HTML/CSS/JS with a live calendar and WhatsApp confirmation."
+tags: ["html", "css", "javascript", "freelance", "performance"]
+coverImage: "/blog/velour-salon-cover.png"
+---
+
+Most of my recent work leans on Next.js and React by default. Velour Salon was a deliberate exception — a freelance technical assessment where the brief called for plain HTML, CSS, and JavaScript. No framework, no build step, no dependencies to manage. Just the fundamentals, done well.
+
+## The brief
+
+A salon booking site needed a clean way for clients to book an appointment without a phone call. The constraint that shaped everything: keep it framework-free and fast, since the site needed to load instantly on the kind of mid-range Android phones and patchy connections that are the norm for a lot of salon clients — not a hypothetical "mobile-first" checkbox, but the actual primary use case.
+
+## What I built
+
+A 4-step booking flow, structured so a client never has to guess what happens next:
+
+1. **Choose a service** — clear categories, no dropdown-hunting
+2. **Pick a date and time** — a live calendar showing real availability, not a static picker that lets you double-book
+3. **Enter details** — minimal fields, no account creation required
+4. **Confirm** — booking summary, with confirmation sent via WhatsApp rather than email, matching how the salon's actual clients communicate
+
+The WhatsApp confirmation was the detail that mattered most. Email confirmations get ignored or lost; a WhatsApp message lands where people actually look. Small decision, but it's the kind of thing that only comes from thinking about the real user instead of the default pattern.
+
+## Why plain HTML/CSS/JS, and why it worked
+
+Without a framework, every kilobyte is a deliberate choice. That constraint pushed the whole build toward performance almost by default — no client-side router to load, no hydration cost, no unused component library sitting in the bundle. The tradeoff is more manual work on state management (the booking flow's step logic, form validation, and calendar availability all had to be hand-rolled), but for a scoped, mostly-static site, that tradeoff paid off directly in load time.
+
+## The result
+
+- **93+ Lighthouse score across all categories** — Performance, Accessibility, Best Practices, and SEO
+- Fully functional 4-step booking flow with live calendar availability
+- WhatsApp-based confirmation flow matching the client's actual communication habits
+- Delivered with full documentation: a `DESIGN.md` covering interface decisions, an `UPGRADE_PLAN.md` outlining a path to a more dynamic backend if the client scales, and a clean README
+
+## What I'd take into the next project
+
+Documenting the *why* behind decisions — not just the code — turned out to be worth as much as the build itself. The `DESIGN.md`/`UPGRADE_PLAN.md` pattern gave the client a clear map of what was built and what the next steps would look like if they outgrow a static site. It's a habit I've carried into every project since: ship the code, but also ship the reasoning.
+
+---
+
+*Live: [veloursalon.vercel.app](https://veloursalon.vercel.app) · Code: [github.com/Ashelycole1/Velour-Salon](https://github.com/Ashelycole1/Velour-Salon)*
