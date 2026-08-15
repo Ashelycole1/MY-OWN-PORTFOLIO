@@ -11,7 +11,7 @@ const MENU_LINKS = [
     { name: 'About', url: '/#about-me' },
     { name: 'Projects', url: '/#selected-projects' },
     { name: 'Skills', url: '/#skills' },
-    { name: 'Blog', url: '/blog' },
+    { name: 'Tech Nation', url: '/blog' },
     { name: 'Contact', url: '/#contact' },
 ];
 

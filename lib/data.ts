@@ -292,7 +292,7 @@ export const MY_EXPERIENCE = [
     },
     {
         title: 'GitHub Developer Community Active Contributor',
-        company: 'GitHub (Ranked 112nd nationally in Uganda)',
+        company: 'GitHub (Ranked 72nd nationally in Uganda)',
         duration: 'May 2026 - Present',
     },
     {
