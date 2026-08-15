@@ -1,0 +1,44 @@
+---
+title: "Zero-Bundle Analytics: Privacy-First Event Logging at the Edge"
+date: "2026-08-01"
+excerpt: "Ditching bulky third-party tracking scripts in favor of lightweight Cloudflare edge worker ingestion to keep client bundles under 50KB."
+tags: ["performance", "edge", "analytics", "web-vitals"]
+category: "PERFORMANCE"
+featured: false
+---
+
+Client-side third-party analytics scripts often pull down hundreds of kilobytes of unneeded JavaScript, bloat Total Blocking Time (TBT), and negatively hit Core Web Vitals.
+
+For sites targeting markets where data bundles are costly and mobile CPUs are modest, shipping heavy analytics packages is counter-productive.
+
+## The Edge Ingestion Pipeline
+
+Instead of bundling third-party trackers, a single lightweight beacon (`navigator.sendBeacon`) sends structured JSON to an edge endpoint.
+
+```javascript
+// Lightweight custom telemetry beacon (~200 bytes)
+export function trackEvent(name, properties = {}) {
+  const payload = JSON.stringify({
+    name,
+    properties,
+    url: window.location.pathname,
+    ts: Date.now(),
+  });
+
+  if (navigator.sendBeacon) {
+    navigator.sendBeacon('/api/telemetry', payload);
+  } else {
+    fetch('/api/telemetry', { method: 'POST', body: payload, keepalive: true });
+  }
+}
+```
+
+## Edge Middleware Processing
+
+At the edge (e.g. Next.js Edge Route or Cloudflare Worker), the event is enriched with geolocation, country code, and browser user agent without collecting Personally Identifiable Information (PII), then batched to ClickHouse or BigQuery.
+
+## Results & Impact
+
+- **Bundle Savings**: Eliminated ~85KB of vendor scripts.
+- **Lighthouse Performance**: Maintained 98+ mobile score.
+- **Privacy Compliance**: GDPR and local data protection compliance out of the box.

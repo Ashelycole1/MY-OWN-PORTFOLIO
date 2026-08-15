@@ -11,9 +11,11 @@ export interface BlogPost {
     date: string;
     excerpt: string;
     tags: string[];
+    category: string;
     coverImage?: string;
     readingTime: string;
     content: string;
+    featured?: boolean;
 }
 
 export function getAllPosts(): BlogPost[] {
@@ -35,9 +37,11 @@ export function getAllPosts(): BlogPost[] {
                 date: data.date ?? '',
                 excerpt: data.excerpt ?? '',
                 tags: data.tags ?? [],
+                category: (data.category || (data.tags && data.tags[0]) || 'ENGINEERING').toUpperCase(),
                 coverImage: data.coverImage,
                 readingTime: stats.text,
                 content,
+                featured: Boolean(data.featured),
             };
         })
         .sort((a, b) => (a.date < b.date ? 1 : -1));
@@ -57,8 +61,10 @@ export function getPostBySlug(slug: string): BlogPost | null {
         date: data.date ?? '',
         excerpt: data.excerpt ?? '',
         tags: data.tags ?? [],
+        category: (data.category || (data.tags && data.tags[0]) || 'ENGINEERING').toUpperCase(),
         coverImage: data.coverImage,
         readingTime: stats.text,
         content,
+        featured: Boolean(data.featured),
     };
 }

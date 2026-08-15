@@ -1,0 +1,57 @@
+---
+title: "Designing Offline-Resilient Payment & Sync Architectures for Emerging Markets"
+date: "2026-08-08"
+excerpt: "How to handle spotty 3G, intermittent mobile money webhooks, and local database conflict resolution when building payment-adjacent systems in East Africa."
+tags: ["fintech", "distributed-systems", "offline", "architecture"]
+category: "ARCHITECTURE"
+featured: false
+---
+
+In emerging tech ecosystems like Uganda and Kenya, connectivity is not a continuous binary state of "online" or "offline" — it is an unpredictable spectrum with high packet loss, throttled bandwidth, and sudden drops.
+
+Building software that pretends networks are reliable results in stranded transactions, duplicated billing, and broken user trust. Here is how we design for reality.
+
+## The Two Generals Problem in Mobile Money
+
+Mobile money integrations (MTN MoMo, Airtel Money, M-Pesa) operate on asynchronous webhook callbacks. When a user initiates a payment:
+
+1. The client sends a payment intent to your backend.
+2. Your backend requests a push prompt on the user's phone via telecom USSD/STK.
+3. The user authorizes the PIN on their SIM card.
+4. The telecom delivers a webhook to your server — minutes later, or sometimes after network retries.
+
+If the user's client app closes or loses 3G before step 4 completes, the client state is desynchronized from the ledger.
+
+```typescript
+interface PaymentState {
+  id: string;
+  idempotencyKey: string;
+  status: 'pending' | 'settled' | 'failed';
+  localTimestamp: number;
+  retryCount: number;
+}
+
+export async function submitOfflineTransaction(tx: PaymentState) {
+  // Store locally in IndexedDB first before touching the network
+  await db.transactions.put({ ...tx, syncState: 'queued' });
+  return registerBackgroundSync('sync-payments');
+}
+```
+
+## Idempotency Keys as First-Class Citizens
+
+Every request must carry a deterministic, client-generated idempotency key (UUID v4 + timestamp hash). If the connection drops during an in-flight POST request, subsequent retries will safely retrieve the previous state rather than creating duplicate debits.
+
+## CRDTs vs Last-Write-Wins in Local DB Sync
+
+When clients operate offline for hours and then reconnect simultaneously, merging records becomes the central challenge:
+
+- **State-based CRDTs (Conflict-free Replicated Data Types)** for counters and balance reconciliation.
+- **Append-only event journals** rather than mutating existing rows.
+- **Deterministic ordering** using hybrid logical clocks (HLC) rather than untrusted device wall-clock time.
+
+## Key Takeaways
+
+1. Never mutate data in place during an unstable session.
+2. Persist to local durable storage (IndexedDB / SQLite) before initiating outbound network calls.
+3. Treat network availability as an opportunistic optimization, not a strict prerequisite.
