@@ -63,7 +63,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // 3. All Tech Nation Articles / Dispatches
     const blogPosts = getAllPosts();
     const blogUrls: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-        url: `${baseUrl}/blog?post=${post.slug}`,
+        url: `${baseUrl}/blog/${post.slug}`,
         lastModified: new Date(post.date || now),
         changeFrequency: 'daily',
         priority: 0.9,

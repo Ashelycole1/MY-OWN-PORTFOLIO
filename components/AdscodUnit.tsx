@@ -2,13 +2,20 @@
 
 import { useEffect, useRef } from 'react';
 
+/** Ads render only when a publisher key is configured; otherwise the slot takes no space. */
+export const hasAdscod = Boolean(process.env.NEXT_PUBLIC_ADSCOD_PUBLISHER_KEY);
+
 interface AdscodUnitProps {
     placement: 'inline' | 'native';
     theme?: 'light' | 'dark';
     className?: string;
 }
 
-export function AdscodUnit({ placement, theme = 'dark', className = '' }: AdscodUnitProps) {
+export function AdscodUnit({
+    placement,
+    theme = 'dark',
+    className = '',
+}: AdscodUnitProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const publisherKey = process.env.NEXT_PUBLIC_ADSCOD_PUBLISHER_KEY;
 
@@ -36,6 +43,8 @@ export function AdscodUnit({ placement, theme = 'dark', className = '' }: Adscod
         };
     }, [placement, theme, publisherKey]);
 
+    if (!publisherKey) return null;
+
     return (
         <aside
             aria-label="Advertisement"
@@ -53,19 +62,7 @@ export function AdscodUnit({ placement, theme = 'dark', className = '' }: Adscod
             <div
                 ref={containerRef}
                 className="w-full min-h-[100px] flex items-center justify-center text-xs text-muted-foreground/60 text-center"
-            >
-                {!publisherKey && (
-                    <div className="py-4 px-3 flex flex-col items-center gap-1.5 w-full bg-background/50 rounded-lg border border-dashed border-border/50">
-                        <div className="size-2 rounded-full bg-primary/60 animate-pulse" />
-                        <span className="font-mono text-[11px] text-muted-foreground">
-                            Adscod Partner Spotlight
-                        </span>
-                        <span className="text-[10px] text-muted-foreground/60 max-w-xs">
-                            Curated developer tools, cloud infrastructure & tech services.
-                        </span>
-                    </div>
-                )}
-            </div>
+            ></div>
         </aside>
     );
 }

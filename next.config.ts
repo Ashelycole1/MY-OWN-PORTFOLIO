@@ -12,6 +12,13 @@ const nextConfig: NextConfig = {
             { source: '/projects/law-buddy', destination: '/projects/lawbuddy', permanent: true },
             { source: '/projects/eco-farm', destination: '/projects/ecofarm', permanent: true },
             { source: '/projects/accommodate-me', destination: '/projects/accommodateme', permanent: true },
+            // Blog posts moved from /blog?post=<slug> to /blog/<slug>.
+            {
+                source: '/blog',
+                has: [{ type: 'query', key: 'post', value: '(?<post>[a-z0-9-]+)' }],
+                destination: '/blog/:post',
+                permanent: true,
+            },
         ];
     },
     pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],

@@ -98,7 +98,7 @@ const Navbar = () => {
                 )}
             >
                 {MENU_LINKS.map((link) => {
-                    const isActive = activeLink === link.url || (link.url !== '/' && pathname === link.url);
+                    const isActive = activeLink === link.url || (link.url.startsWith('/blog') && pathname.startsWith('/blog'));
                     return (
                         <button
                             key={link.name}
@@ -172,7 +172,7 @@ const Navbar = () => {
                         className="pointer-events-auto absolute top-16 right-5 bg-[hsl(var(--background-light))/95] backdrop-blur-xl border border-border/40 p-2 rounded-2xl shadow-2xl flex flex-col gap-1 min-w-[200px]"
                     >
                         {MENU_LINKS.map((link) => {
-                            const isActive = activeLink === link.url || (link.url !== '/' && pathname === link.url);
+                            const isActive = activeLink === link.url || (link.url.startsWith('/blog') && pathname.startsWith('/blog'));
                             return (
                                 <button
                                     key={link.name}

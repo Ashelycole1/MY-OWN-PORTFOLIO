@@ -89,6 +89,25 @@
 }
 
 @layer components {
+    .prose-theme {
+        --tw-prose-body: hsl(var(--muted-foreground));
+        --tw-prose-headings: hsl(var(--foreground));
+        --tw-prose-lead: hsl(var(--muted-foreground));
+        --tw-prose-links: hsl(var(--primary));
+        --tw-prose-bold: hsl(var(--foreground));
+        --tw-prose-counters: hsl(var(--muted-foreground));
+        --tw-prose-bullets: hsl(var(--border));
+        --tw-prose-hr: hsl(var(--border));
+        --tw-prose-quotes: hsl(var(--foreground));
+        --tw-prose-quote-borders: hsl(var(--highlight));
+        --tw-prose-captions: hsl(var(--muted-foreground));
+        --tw-prose-code: hsl(var(--highlight));
+        --tw-prose-pre-code: #e6edf3;
+        --tw-prose-pre-bg: #0d1117;
+        --tw-prose-th-borders: hsl(var(--border));
+        --tw-prose-td-borders: hsl(var(--border));
+    }
+
     .grid {
         @apply gap-[25px];
     }

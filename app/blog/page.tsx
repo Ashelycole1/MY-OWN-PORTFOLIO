@@ -1,26 +1,36 @@
-import { getAllPosts } from '@/lib/blog';
-import { TechNationApp } from '@/components/TechNationApp';
 import type { Metadata } from 'next';
+import BlogIndex from '@/components/blog/BlogIndex';
+import { getAllPostMeta } from '@/lib/blog';
+import { SITE } from '@/lib/profile';
+
+const description =
+    'Notes on software engineering, offline-first design, building in Africa, and lessons from real projects by Niwasiima Ashelycole.';
 
 export const metadata: Metadata = {
-    title: 'Tech Nation — Engineering & Architecture Publication',
-    description: 'Thoughts on software engineering, offline-first design, building in Africa, and lessons from real projects by Niwasiima Ashelycole.',
+    title: `Tech Nation — Blog by ${SITE.name}`,
+    description,
+    alternates: {
+        canonical: '/blog',
+        types: { 'application/rss+xml': '/blog/rss.xml' },
+    },
     openGraph: {
-        title: 'Tech Nation — Niwasiima Ashelycole',
-        description: 'Thoughts on software engineering, offline-first design, building in Africa, and lessons from real projects.',
-        url: 'https://ashelycole.dev/blog',
-        siteName: 'Tech Nation',
+        title: `Tech Nation — ${SITE.name}`,
+        description,
+        url: `${SITE.url}/blog`,
+        siteName: SITE.name,
         type: 'website',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Tech Nation — Niwasiima Ashelycole',
-        description: 'Thoughts on software engineering, offline-first design, and building in Africa.',
+        title: `Tech Nation — ${SITE.name}`,
+        description,
     },
 };
 
 export default function BlogPage() {
-    const posts = getAllPosts();
-
-    return <TechNationApp initialPosts={posts} />;
+    return (
+        <main className="container min-h-[80vh] py-24 md:py-32">
+            <BlogIndex posts={getAllPostMeta()} />
+        </main>
+    );
 }
