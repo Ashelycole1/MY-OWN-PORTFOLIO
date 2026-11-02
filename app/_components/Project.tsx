@@ -71,8 +71,13 @@ const ProjectCard = ({ project, variant }: Props) => {
                 'project-item group flex flex-col h-full rounded-2xl border border-border bg-background-light/40 hover:border-primary/60 transition-colors overflow-hidden',
             )}
         >
-            {isFeatured && project.image && (
-                <div className="relative w-full aspect-[16/9] overflow-hidden border-b border-border bg-background-light">
+            {project.image && (
+                <div
+                    className={cn(
+                        'relative w-full overflow-hidden border-b border-border bg-background-light',
+                        isFeatured ? 'aspect-[16/9]' : 'aspect-[2/1]',
+                    )}
+                >
                     <Image
                         src={project.image}
                         alt={`${project.title} screenshot`}
@@ -80,6 +85,19 @@ const ProjectCard = ({ project, variant }: Props) => {
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover object-top group-hover:scale-[1.03] transition-transform duration-700"
                     />
+                </div>
+            )}
+
+            {!project.image && (
+                // Placeholder keeps rows aligned until a screenshot exists (DESIGN.md §9).
+                <div
+                    aria-hidden
+                    className={cn(
+                        'w-full flex items-center justify-center border-b border-border bg-background-light font-anton uppercase text-muted-foreground/40 select-none',
+                        isFeatured ? 'aspect-[16/9] text-5xl' : 'aspect-[2/1] text-4xl',
+                    )}
+                >
+                    {project.title}
                 </div>
             )}
 

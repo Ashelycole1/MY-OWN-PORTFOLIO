@@ -31,6 +31,7 @@ const ALL_PROJECTS: Project[] = [
         tags: ['Django', 'React', 'PostgreSQL', 'Docker'],
         live: 'https://auditlog.ashelycole.dev',
         repo: 'https://github.com/Ashelycole1/AUDITLOGS',
+        image: '/projects/images/auditlogs/auditlogs-cover.png',
     },
     {
         slug: 'mdaad-now',
@@ -46,6 +47,7 @@ const ALL_PROJECTS: Project[] = [
         tags: ['React', 'Leaflet', 'PWA', 'Node.js'],
         live: 'https://mdaad-now.vercel.app',
         repo: 'https://github.com/evansrwothomio20-web/Mdaad-Now',
+        image: '/projects/images/mdaad-now/mdaad-now-cover.png',
     },
     {
         slug: 'agrimoist-ai',
@@ -105,6 +107,7 @@ const ALL_PROJECTS: Project[] = [
         summary: 'Offline-first voting with anonymous cryptographic receipts.',
         tags: ['Next.js', 'TypeScript', 'Supabase', 'Clerk', 'PWA'],
         live: 'https://e-vote-self.vercel.app',
+        image: '/projects/images/e-vote/e-vote-cover.png',
     },
     {
         slug: 'the-bookworm',
@@ -118,6 +121,7 @@ const ALL_PROJECTS: Project[] = [
         tags: ['Next.js', 'TypeScript', 'MongoDB', 'Cloudflare R2'],
         live: 'https://the-book-worm.app',
         repo: 'https://github.com/Ashelycole1/thebookworm',
+        image: '/projects/images/the-bookworm/the-bookworm-cover.png',
     },
     {
         slug: 'pottrust',

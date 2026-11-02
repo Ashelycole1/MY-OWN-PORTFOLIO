@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CONTACT } from '@/lib/profile';
+import ThemeToggle from './ThemeToggle';
 
 const MENU_LINKS = [
     { name: 'Home', url: '/' },
@@ -90,7 +91,7 @@ const Navbar = () => {
             {/* Center — Desktop pill nav */}
             <nav
                 className={cn(
-                    'pointer-events-auto absolute left-1/2 -translate-x-1/2 top-4 hidden md:flex items-center gap-1 px-2 py-1.5 rounded-full',
+                    'pointer-events-auto absolute left-1/2 -translate-x-1/2 top-4 hidden lg:flex items-center gap-1 px-2 py-1.5 rounded-full',
                     'bg-[hsl(var(--background-light))/80] backdrop-blur-md border border-border/40',
                     'shadow-lg transition-all duration-300',
                     scrolled && 'shadow-2xl border-border/60',
@@ -131,9 +132,11 @@ const Navbar = () => {
                     RESUME
                 </a>
 
+                <ThemeToggle />
+
                 {/* Mobile Hamburger Menu Toggle */}
                 <button
-                    className="md:hidden flex items-center justify-center size-9 rounded-full bg-[hsl(var(--background-light))/80] backdrop-blur-md border border-border/40 shadow-lg text-foreground hover:bg-muted transition-colors"
+                    className="lg:hidden flex items-center justify-center size-9 rounded-full bg-[hsl(var(--background-light))/80] backdrop-blur-md border border-border/40 shadow-lg text-foreground hover:bg-muted transition-colors"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
                     aria-expanded={mobileMenuOpen}

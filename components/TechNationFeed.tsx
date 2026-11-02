@@ -74,8 +74,8 @@ export function TechNationFeed({ posts, onSelectPost }: TechNationFeedProps) {
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
                     <div>
                         <div className="flex items-center gap-2 mb-2">
-                            <span className="inline-flex items-center gap-1 text-[11px] font-mono font-bold tracking-widest uppercase text-[#E1F036] bg-[#E1F036]/10 px-2.5 py-0.5 rounded-full border border-[#E1F036]/20">
-                                <Flame className="w-3 h-3 text-[#E1F036]" />
+                            <span className="inline-flex items-center gap-1 text-[11px] font-mono font-bold tracking-widest uppercase text-highlight bg-highlight/10 px-2.5 py-0.5 rounded-full border border-highlight/20">
+                                <Flame className="w-3 h-3 text-highlight" />
                                 The Engineering Publication
                             </span>
                             <span className="text-xs font-mono text-muted-foreground/60">
@@ -125,7 +125,7 @@ export function TechNationFeed({ posts, onSelectPost }: TechNationFeedProps) {
                         <section aria-label="Lead Story" className="group">
                             <div
                                 onClick={() => onSelectPost(leadStory)}
-                                className="cursor-pointer block rounded-3xl border border-border/50 bg-gradient-to-b from-card/70 to-card/30 p-6 md:p-8 hover:border-[#E1F036]/40 transition-all duration-300 shadow-xl"
+                                className="cursor-pointer block rounded-3xl border border-border/50 bg-gradient-to-b from-card/70 to-card/30 p-6 md:p-8 hover:border-highlight/40 transition-all duration-300 shadow-xl"
                             >
                                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                                     {/* Lead Image (16:9 / aspect) */}
@@ -148,7 +148,7 @@ export function TechNationFeed({ posts, onSelectPost }: TechNationFeedProps) {
                                             </div>
                                         )}
                                         <div className="absolute top-3 left-3">
-                                            <span className="px-3 py-1 bg-black/80 backdrop-blur-md border border-[#E1F036]/40 text-[#E1F036] font-mono text-[10px] font-bold tracking-widest uppercase rounded-full">
+                                            <span className="px-3 py-1 bg-black/80 backdrop-blur-md border border-highlight/40 text-highlight font-mono text-[10px] font-bold tracking-widest uppercase rounded-full">
                                                 ★ LEAD STORY
                                             </span>
                                         </div>
@@ -158,7 +158,7 @@ export function TechNationFeed({ posts, onSelectPost }: TechNationFeedProps) {
                                     <div className="lg:col-span-5 flex flex-col justify-between space-y-4">
                                         <div className="space-y-3">
                                             <div className="flex items-center gap-2">
-                                                <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#E1F036]">
+                                                <span className="text-xs font-mono font-bold uppercase tracking-widest text-highlight">
                                                     {'//'} {leadStory.category}
                                                 </span>
                                                 <span className="text-muted-foreground/40">·</span>
@@ -192,7 +192,7 @@ export function TechNationFeed({ posts, onSelectPost }: TechNationFeedProps) {
                                                 </time>
                                             </div>
 
-                                            <span className="inline-flex items-center gap-1 text-[#E1F036] font-mono font-semibold group-hover:translate-x-1 transition-transform">
+                                            <span className="inline-flex items-center gap-1 text-highlight font-mono font-semibold group-hover:translate-x-1 transition-transform">
                                                 Read Dispatch <ArrowRight className="w-3.5 h-3.5" />
                                             </span>
                                         </div>
@@ -224,7 +224,7 @@ export function TechNationFeed({ posts, onSelectPost }: TechNationFeedProps) {
                                         )}
 
                                         <div className="flex items-center gap-2">
-                                            <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#E1F036]">
+                                            <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-highlight">
                                                 {post.category}
                                             </span>
                                             <span className="text-muted-foreground/40">·</span>
@@ -294,7 +294,7 @@ export function TechNationFeed({ posts, onSelectPost }: TechNationFeedProps) {
                                         {/* Content info */}
                                         <div className="flex-1 space-y-1.5 min-w-0">
                                             <div className="flex items-center gap-2">
-                                                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#E1F036]">
+                                                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-highlight">
                                                     {post.category}
                                                 </span>
                                                 <span className="text-muted-foreground/40">·</span>
@@ -344,7 +344,7 @@ export function TechNationFeed({ posts, onSelectPost }: TechNationFeedProps) {
                                                 {index + 1}
                                             </span>
                                             <div className="space-y-1">
-                                                <span className="text-[9px] font-mono font-bold uppercase text-[#E1F036]">
+                                                <span className="text-[9px] font-mono font-bold uppercase text-highlight">
                                                     {post.category}
                                                 </span>
                                                 <h4 className="text-xs sm:text-sm font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2 leading-snug">

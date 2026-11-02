@@ -31,6 +31,48 @@
         --chart-3: 30 80% 55%;
         --chart-4: 280 65% 60%;
         --chart-5: 340 75% 55%;
+
+        /* Theme-only tokens (were hard-coded colours) */
+        --highlight: 64 86% 58%; /* #E1F036 */
+        --button-fill: 0 0% 100%;
+        --arrow-stroke: 0 0% 17%; /* #2C2C2C */
+        --particle: 0 0% 100%;
+
+        color-scheme: dark;
+    }
+
+    /* Light theme: toggled by adding .light to <html> (see ThemeToggle). */
+    .light {
+        --background: 40 20% 97%;
+        --background-light: 40 10% 91%;
+        --foreground: 0 0% 13%;
+
+        --card: 0 0% 100%;
+        --card-foreground: 0 0% 9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 0 0% 9%;
+
+        /* Darker green so text-primary meets WCAG AA on the light background */
+        --primary: 140 100% 25%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 193 100% 28%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 40 10% 93%;
+        --muted-foreground: 0 0% 34%;
+        --accent: 40 10% 93%;
+        --accent-foreground: 0 0% 9%;
+        --destructive: 0 72% 45%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 0 0% 82%;
+        --input: 0 0% 82%;
+        --ring: 0 0% 25%;
+
+        --highlight: 64 90% 22%;
+        --button-fill: 0 0% 13%;
+        --arrow-stroke: 0 0% 85%;
+        --particle: 0 0% 13%;
+
+        color-scheme: light;
     }
 }
 
@@ -42,7 +84,7 @@
         @apply border-border !cursor-none;
     }
     body {
-        @apply bg-background text-foreground font-roboto-flex;
+        @apply bg-background text-foreground font-roboto-flex transition-colors duration-300;
     }
 }
 

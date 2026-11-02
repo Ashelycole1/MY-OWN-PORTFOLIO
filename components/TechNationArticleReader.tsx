@@ -74,7 +74,7 @@ export function TechNationArticleReader({
                     </button>
 
                     <div className="flex items-center gap-3">
-                        <span className="text-[11px] font-mono uppercase tracking-widest text-[#E1F036] font-bold bg-[#E1F036]/10 px-2.5 py-0.5 rounded-full border border-[#E1F036]/20">
+                        <span className="text-[11px] font-mono uppercase tracking-widest text-highlight font-bold bg-highlight/10 px-2.5 py-0.5 rounded-full border border-highlight/20">
                             {post.category}
                         </span>
                     </div>
@@ -85,7 +85,7 @@ export function TechNationArticleReader({
                 {/* Article Header */}
                 <header className="max-w-4xl mx-auto mb-12">
                     <div className="flex items-center gap-2 mb-4">
-                        <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#E1F036]">
+                        <span className="text-xs font-mono font-bold tracking-widest uppercase text-highlight">
                             {'//'} {post.category}
                         </span>
                         <span className="text-muted-foreground/40">·</span>
@@ -154,9 +154,9 @@ export function TechNationArticleReader({
                             prose-p:leading-relaxed prose-p:text-muted-foreground prose-p:text-base sm:prose-p:text-lg
                             prose-li:text-muted-foreground prose-li:text-base sm:prose-li:text-lg
                             prose-strong:text-foreground prose-strong:font-semibold
-                            prose-a:text-[#E1F036] prose-a:no-underline hover:prose-a:underline
+                            prose-a:text-highlight prose-a:no-underline hover:prose-a:underline
                             prose-hr:border-border/40
-                            prose-blockquote:border-l-4 prose-blockquote:border-[#E1F036] prose-blockquote:bg-muted/20 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg prose-blockquote:text-foreground/90
+                            prose-blockquote:border-l-4 prose-blockquote:border-highlight prose-blockquote:bg-muted/20 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg prose-blockquote:text-foreground/90
                         ">
                             {contentSections.map((section, idx) => (
                                 <React.Fragment key={idx}>
@@ -177,7 +177,7 @@ export function TechNationArticleReader({
                                                 const isInline = !match && !String(children).includes('\n');
                                                 if (isInline) {
                                                     return (
-                                                        <code className="text-[#E1F036] bg-muted/60 px-1.5 py-0.5 rounded text-xs font-mono font-medium before:content-none after:content-none" {...props}>
+                                                        <code className="text-highlight bg-muted/60 px-1.5 py-0.5 rounded text-xs font-mono font-medium before:content-none after:content-none" {...props}>
                                                             {children}
                                                         </code>
                                                     );
@@ -255,7 +255,7 @@ export function TechNationArticleReader({
                                             className="py-4 group cursor-pointer flex items-start justify-between gap-4 transition-colors"
                                         >
                                             <div className="space-y-1.5 flex-1">
-                                                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#E1F036]">
+                                                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-highlight">
                                                     {related.category}
                                                 </span>
                                                 <h4 className="text-base font-anton uppercase text-foreground group-hover:text-primary transition-colors leading-snug">
