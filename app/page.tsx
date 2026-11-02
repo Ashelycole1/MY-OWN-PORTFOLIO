@@ -6,7 +6,7 @@ import ProjectList from './_components/ProjectList';
 import Recognition from './_components/Recognition';
 import Skills from './_components/Skills';
 import CertificationsGallery from '@/components/CertificationsGallery';
-import SocialCardStack from '@/components/SocialCardStack';
+import ContactSection from '@/components/ContactSection';
 import { CONTACT, SITE } from '@/lib/profile';
 
 export default function Home() {
@@ -48,7 +48,7 @@ export default function Home() {
             <CertificationsGallery />
             <Education />
             <AboutMe />
-            <SocialCardStack />
+            <ContactSection />
         </div>
     );
 }
