@@ -59,6 +59,7 @@ const Button = ({
         light: `bg-background-active text-foreground hover:bg-background-active`,
         dark: `bg-foreground text-background hover:bg-foreground/80`,
         link: `text-foreground hover:text-primary`,
+        outline: `border border-foreground/40 text-foreground hover:text-background hover:border-foreground`,
         'no-color': '',
     }[variant || 'primary'];
 
@@ -68,7 +69,7 @@ const Button = ({
     );
 
     const buttonClasses = cn(
-        `group h-12 px-8 inline-flex justify-center items-center gap-2 text-lg uppercase font-anton tracking-widest outline-none transition-colors relative overflow-hidden`,
+        `group h-12 px-8 inline-flex justify-center items-center gap-2 text-lg uppercase font-anton tracking-widest outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background transition-colors relative overflow-hidden`,
         variantClasses,
         { [iconClasses]: icon },
         className,

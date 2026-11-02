@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { socialLinks } from '@/lib/socials';
+import { CONTACT, SECTION_IDS } from '@/lib/profile';
 
 // SVG icons for each platform
 const PlatformIcon = ({ icon }: { icon: string }) => {
@@ -50,9 +51,9 @@ const PlatformIcon = ({ icon }: { icon: string }) => {
 };
 
 // Fan rotation angles and X offsets for each card
-const FAN_ROTATIONS = [-20, -10, 0, 10, 20];
-const FAN_X_OFFSETS = [-140, -70, 0, 70, 140];
-const FAN_Y_OFFSETS = [20, 5, 0, 5, 20]; // to create an arc
+const FAN_ROTATIONS = [-20, -12, -4, 4, 12, 20];
+const FAN_X_OFFSETS = [-150, -90, -30, 30, 90, 150];
+const FAN_Y_OFFSETS = [20, 8, 2, 2, 8, 20]; // to create an arc
 
 const SocialCardStack = () => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -66,11 +67,25 @@ const SocialCardStack = () => {
     }, []);
 
     return (
-        <section id="contact" className="py-20 md:py-32 w-full max-w-[1200px] mx-auto px-5 lg:px-10">
-            <div className="flex justify-between items-end mb-14">
+        <section id={SECTION_IDS.contact} className="py-20 md:py-32 w-full max-w-[1200px] mx-auto px-5 lg:px-10">
+            <div className="flex flex-wrap justify-between items-end gap-6 mb-14">
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-anton uppercase text-foreground">
                     Find Me Online
                 </h2>
+                <div className="flex flex-col gap-1 text-lg md:text-right">
+                    <a
+                        href={`mailto:${CONTACT.email}`}
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                        {CONTACT.email}
+                    </a>
+                    <a
+                        href={CONTACT.phoneHref}
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                        {CONTACT.phone}
+                    </a>
+                </div>
             </div>
 
             {isMobile ? (

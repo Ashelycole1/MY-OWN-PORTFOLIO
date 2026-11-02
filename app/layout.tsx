@@ -13,6 +13,7 @@ import Preloader from '../components/Preloader';
 import StickyEmail from './_components/StickyEmail';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Script from 'next/script';
+import { SITE } from '@/lib/profile';
 
 const antonFont = Anton({
     weight: '400',
@@ -29,23 +30,34 @@ const robotoFlex = Roboto_Flex({
 });
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://ashelycole.dev'),
-    title: 'Niwasiima Ashelycole - Full Stack Developer Portfolio',
-    description: 'Personal portfolio of Niwasiima Ashelycole, a passionate full-stack developer showcasing projects, skills, and experiences.',
-    keywords: ['Niwasiima Ashelycole', 'Portfolio', 'Full Stack Developer', 'Software Engineer', 'Web Development'],
-    authors: [{ name: 'Niwasiima Ashelycole' }],
+    metadataBase: new URL(SITE.url),
+    title: SITE.title,
+    description: SITE.description,
+    keywords: [
+        'Niwasiima Ashelycole',
+        'Full Stack Developer',
+        'Web Developer Kampala',
+        'Uganda',
+        'Next.js',
+        'Django',
+        'AI agents',
+        'Offline-first',
+    ],
+    authors: [{ name: SITE.name, url: SITE.url }],
+    alternates: { canonical: '/' },
     openGraph: {
-        title: 'Niwasiima Ashelycole - Full Stack Developer Portfolio',
-        description: 'Personal portfolio of Niwasiima Ashelycole, a passionate full-stack developer showcasing projects, skills, and experiences.',
-        url: 'https://ashelycole.dev',
-        siteName: 'Niwasiima Ashelycole Portfolio',
+        title: SITE.title,
+        description: SITE.description,
+        url: SITE.url,
+        siteName: SITE.name,
         locale: 'en_US',
         type: 'website',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Niwasiima Ashelycole - Full Stack Developer',
-        description: 'Personal portfolio of Niwasiima Ashelycole.',
+        title: SITE.title,
+        description: SITE.description,
+        creator: '@ashelycole01',
     },
 };
 

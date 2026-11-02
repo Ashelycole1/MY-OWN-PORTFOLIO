@@ -1,7 +1,7 @@
 'use client';
 import ArrowAnimation from '@/components/ArrowAnimation';
 import Button from '@/components/Button';
-import { GENERAL_INFO } from '@/lib/data';
+import { CONTACT, HERO, SECTION_IDS, STATS } from '@/lib/profile';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
@@ -42,56 +42,61 @@ const Banner = () => {
             >
                 <div className="max-md:grow max-md:flex flex-col justify-center items-start max-w-[544px]">
                     <h1 className="banner-title slide-up-and-fade leading-[.95] text-6xl sm:text-[80px] font-anton">
-                        <span className="text-primary">SOFTWARE</span>
-                        <br /> <span className="ml-4">ENGINEER</span>
+                        <span className="text-primary">{HERO.titleTop}</span>
+                        <br /> <span className="ml-4">{HERO.titleBottom}</span>
                     </h1>
                     <p className="banner-description slide-up-and-fade mt-6 text-lg text-muted-foreground">
-                        Hi! I&apos;m{' '}
+                        I&apos;m{' '}
                         <span className="font-medium text-foreground">
-                            Niwasiima Ashelycole
+                            {HERO.name}
                         </span>
-                        . Software Engineer building offline-first, multilingual, and financial-access tools for East Africa. Currently building at RENOA for Africa.
+                        . {HERO.intro}
                     </p>
-                    <Button
-                        as="link"
-                        href={`mailto:${GENERAL_INFO.email}`}
-                        variant="primary"
-                        className="mt-9 banner-button slide-up-and-fade"
-                    >
-                        Let&apos;s Talk
-                    </Button>
+                    <div className="mt-9 flex flex-wrap gap-3 banner-button slide-up-and-fade">
+                        <Button
+                            as="link"
+                            href={`#${SECTION_IDS.projects}`}
+                            variant="primary"
+                        >
+                            View Projects
+                        </Button>
+                        <Button
+                            as="link"
+                            href={`mailto:${CONTACT.email}?subject=${encodeURIComponent(CONTACT.emailSubject)}`}
+                            variant="outline"
+                        >
+                            Let&apos;s Talk
+                        </Button>
+                        <Button
+                            as="link"
+                            href={CONTACT.resume}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            variant="outline"
+                        >
+                            Resume
+                        </Button>
+                    </div>
 
                     <div className="flex items-center gap-2 mt-3">
-                        <span className="size-3 rounded-full bg-white"></span>
+                        <span className="size-3 rounded-full bg-primary"></span>
                         <span className="text-sm text-muted-foreground">
-                            Available for full-time opportunities
+                            {HERO.status}
                         </span>
                     </div>
                 </div>
 
                 <div className="md:absolute bottom-[10%] right-[4%] flex md:flex-col gap-4 md:gap-8 text-center md:text-right">
-                    <div className="slide-up-and-fade">
-                        <h5 className="text-3xl sm:text-4xl font-anton text-primary mb-1.5">
-                            2+
-                        </h5>
-                        <p className="text-muted-foreground">
-                            Years of Experience
-                        </p>
-                    </div>
-                    <div className="slide-up-and-fade">
-                        <h5 className="text-3xl sm:text-4xl font-anton text-primary mb-1.5">
-                            7+
-                        </h5>
-                        <p className="text-muted-foreground">
-                            Completed Projects
-                        </p>
-                    </div>
-                    <div className="slide-up-and-fade">
-                        <h5 className="text-3xl sm:text-4xl font-anton text-primary mb-1.5">
-                            10K+
-                        </h5>
-                        <p className="text-muted-foreground">Hours Worked</p>
-                    </div>
+                    {STATS.map((stat) => (
+                        <div className="slide-up-and-fade" key={stat.label}>
+                            <h5 className="text-3xl sm:text-4xl font-anton text-primary mb-1.5">
+                                {stat.value}
+                            </h5>
+                            <p className="text-muted-foreground max-md:text-sm">
+                                {stat.label}
+                            </p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

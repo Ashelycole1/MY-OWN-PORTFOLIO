@@ -1,11 +1,11 @@
-import { GENERAL_INFO } from '@/lib/data';
+import { CONTACT } from '@/lib/profile';
 import React from 'react';
 
 const StickyEmail = () => {
     return (
         <div className="max-xl:hidden fixed bottom-32 left-0 block">
             <a
-                href={`mailto:${GENERAL_INFO.email}`}
+                href={`mailto:${CONTACT.email}`}
                 className="px-3 text-muted-foreground tracking-[1px] transition-all !bg-bottom hover:text-foreground hover:!bg-center"
                 style={{
                     // background:
@@ -19,7 +19,7 @@ const StickyEmail = () => {
                     writingMode: 'vertical-rl',
                 }}
             >
-                {GENERAL_INFO.email}
+                {CONTACT.email}
             </a>
         </div>
     );

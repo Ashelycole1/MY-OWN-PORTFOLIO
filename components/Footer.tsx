@@ -1,4 +1,4 @@
-import { GENERAL_INFO } from '@/lib/data';
+import { CONTACT } from '@/lib/profile';
 
 const Footer = () => {
     return (
@@ -6,10 +6,10 @@ const Footer = () => {
             <div className="container">
                 <p className="text-lg">Have a project in mind?</p>
                 <a
-                    href={`mailto:${GENERAL_INFO.email}`}
+                    href={`mailto:${CONTACT.email}`}
                     className="text-3xl sm:text-4xl font-anton inline-block mt-5 mb-10 hover:underline"
                 >
-                    {GENERAL_INFO.email}
+                    {CONTACT.email}
                 </a>
 
                 <div className="text-muted-foreground text-sm leading-relaxed">

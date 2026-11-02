@@ -1,10 +1,10 @@
 import { notFound } from 'next/navigation';
 import ProjectDetails from './_components/ProjectDetails';
-import { PROJECTS } from '@/lib/data';
+import { getProject, projects } from '@/lib/projects';
 import { Metadata } from 'next';
 
 export const generateStaticParams = async () => {
-    return PROJECTS.map((project) => ({ slug: project.slug }));
+    return projects.map((project) => ({ slug: project.slug }));
 };
 
 export const generateMetadata = async ({
@@ -13,14 +13,14 @@ export const generateMetadata = async ({
     params: Promise<{ slug: string }>;
 }) => {
     const { slug } = await params;
-    const project = PROJECTS.find((project) => project.slug === slug);
+    const project = getProject(slug);
 
     return {
         title: `${project?.title} — Niwasiima Ashelycole`,
-        description: project?.problem,
+        description: project?.summary,
         openGraph: {
             title: project?.title,
-            description: project?.problem,
+            description: project?.summary,
             type: 'website',
         },
     } as Metadata;
@@ -29,7 +29,7 @@ export const generateMetadata = async ({
 const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
     const { slug } = await params;
 
-    const project = PROJECTS.find((project) => project.slug === slug);
+    const project = getProject(slug);
 
     if (!project) {
         return notFound();

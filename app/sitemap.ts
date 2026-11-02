@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { PROJECTS } from '@/lib/data';
+import { projects } from '@/lib/projects';
 import { getAllPosts } from '@/lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/#selected-projects`,
+            url: `${baseUrl}/#projects`,
             lastModified: now,
             changeFrequency: 'daily',
             priority: 0.85,
@@ -53,7 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
 
     // 2. All Project Case Studies
-    const projectUrls: MetadataRoute.Sitemap = PROJECTS.map((project) => ({
+    const projectUrls: MetadataRoute.Sitemap = projects.map((project) => ({
         url: `${baseUrl}/projects/${project.slug}`,
         lastModified: now,
         changeFrequency: 'daily',

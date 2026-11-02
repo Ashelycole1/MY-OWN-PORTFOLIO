@@ -10,20 +10,5 @@ export type Variant =
     | 'light'
     | 'dark'
     | 'link'
+    | 'outline'
     | 'no-color';
-
-export interface IProject {
-    title: string;
-    year: number;
-    problem: string;
-    constraint: string;
-    build: string[];
-    result?: string;
-    techStack: string[];
-    thumbnail: string;
-    longThumbnail: string;
-    images: string[];
-    slug: string;
-    liveUrl?: string;
-    sourceCode?: string;
-}

@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import React from 'react';
 import Image from 'next/image';
+import { ABOUT, SECTION_IDS } from '@/lib/profile';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -31,11 +32,13 @@ const AboutMe = () => {
         { scope: container },
     );
 
+    const [lead, ...rest] = ABOUT.paragraphs;
+
     return (
-        <section className="py-20 md:py-32" id="about-me">
+        <section className="py-20 md:py-32" id={SECTION_IDS.about}>
             <div className="container" ref={container}>
                 <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-center">
-                    
+
                     {/* Left side: Image */}
                     <div className="md:col-span-5 slide-up-and-fade">
                         <div className="relative w-full aspect-[4/5] rounded-3xl overflow-hidden bg-[#F0F0D8]">
@@ -57,21 +60,26 @@ const AboutMe = () => {
 
                         <div className="text-lg md:text-xl text-muted-foreground space-y-6">
                             <p className="slide-up-and-fade text-foreground font-medium">
-                                Hi, I&apos;m Niwasiima Ashelycole, a software Engineer in Uganda turning ideas into creative solutions. I specialize in creating seamless and intuitive user experiences.
+                                {lead}
                             </p>
-                            
-                            <p className="slide-up-and-fade leading-relaxed">
-                                My work spans frontend and backend development, along with a growing focus on artificial intelligence and system architecture. I enjoy designing complete solutions, from building user interfaces to developing backend services and APIs.
-                            </p>
-                            
+
+                            {rest.map((paragraph) => (
+                                <p
+                                    key={paragraph}
+                                    className="slide-up-and-fade leading-relaxed"
+                                >
+                                    {paragraph}
+                                </p>
+                            ))}
+
                             <div className="slide-up-and-fade mt-10 border-l-4 border-[#E1F036] pl-6 py-2">
                                 <p className="text-foreground font-bold text-xl md:text-2xl italic tracking-wide">
-                                    I don&apos;t always have a solution, but I know how to find one.
+                                    {ABOUT.closing}
                                 </p>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </section>

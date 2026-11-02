@@ -5,12 +5,13 @@ import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { CONTACT } from '@/lib/profile';
 
 const MENU_LINKS = [
     { name: 'Home', url: '/' },
-    { name: 'About', url: '/#about-me' },
-    { name: 'Projects', url: '/#selected-projects' },
+    { name: 'Projects', url: '/#projects' },
     { name: 'Skills', url: '/#skills' },
+    { name: 'About', url: '/#about-me' },
     { name: 'Blog', url: '/blog' },
     { name: 'Contact', url: '/#contact' },
 ];
@@ -117,8 +118,9 @@ const Navbar = () => {
             {/* Right — actions */}
             <div className="pointer-events-auto flex items-center gap-2 md:gap-3">
                 <a
-                    href="/Niwasiima_Ashelycole_CV_2026.pdf"
+                    href={CONTACT.resume}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 bg-[#E1F036] text-black px-4 py-2 rounded-full text-sm font-bold tracking-wider hover:brightness-105 transition-all shadow-lg whitespace-nowrap"
                 >
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 hidden sm:block">
@@ -133,6 +135,8 @@ const Navbar = () => {
                 <button
                     className="md:hidden flex items-center justify-center size-9 rounded-full bg-[hsl(var(--background-light))/80] backdrop-blur-md border border-border/40 shadow-lg text-foreground hover:bg-muted transition-colors"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+                    aria-expanded={mobileMenuOpen}
                 >
                     {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
                 </button>

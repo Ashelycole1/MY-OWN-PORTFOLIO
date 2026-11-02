@@ -6,6 +6,14 @@ const withMDX = createMDX({
 });
 
 const nextConfig: NextConfig = {
+    // Project slugs changed in v2.0 (DESIGN.md); keep old URLs working.
+    async redirects() {
+        return [
+            { source: '/projects/law-buddy', destination: '/projects/lawbuddy', permanent: true },
+            { source: '/projects/eco-farm', destination: '/projects/ecofarm', permanent: true },
+            { source: '/projects/accommodate-me', destination: '/projects/accommodateme', permanent: true },
+        ];
+    },
     pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
     images: {
         dangerouslyAllowSVG: true,

@@ -1,6 +1,6 @@
 'use client';
 import SectionTitle from '@/components/SectionTitle';
-import { MY_STACK } from '@/lib/data';
+import { SECTION_IDS, STACK } from '@/lib/profile';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
@@ -58,33 +58,41 @@ const Skills = () => {
     );
 
     return (
-        <section id="skills" ref={containerRef}>
+        <section id={SECTION_IDS.stack} ref={containerRef}>
             <div className="container">
                 <SectionTitle title="My Stack" />
 
-                <div className="space-y-20">
-                    {Object.entries(MY_STACK).map(([key, value]) => (
-                        <div className="grid sm:grid-cols-12" key={key}>
+                <div className="space-y-16 md:space-y-20">
+                    {STACK.map(({ group, items }) => (
+                        <div className="grid sm:grid-cols-12 gap-y-6" key={group}>
                             <div className="sm:col-span-5">
-                                <p className="slide-up text-5xl font-anton leading-none text-muted-foreground uppercase">
-                                    {key}
+                                <p className="slide-up text-4xl md:text-5xl font-anton leading-none text-muted-foreground uppercase">
+                                    {group}
                                 </p>
                             </div>
 
                             <div className="sm:col-span-7 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
-                                {value.map((item) => (
+                                {items.map((item) => (
                                     <div
                                         className="slide-up flex gap-3 items-center leading-none"
                                         key={item.name}
                                     >
                                         <div className="relative size-6 flex items-center justify-center shrink-0">
-                                            <Image
-                                                src={item.icon}
-                                                alt={item.name}
-                                                fill
-                                                className="object-contain"
-                                                unoptimized
-                                            />
+                                            {item.icon ? (
+                                                <Image
+                                                    src={item.icon}
+                                                    alt=""
+                                                    aria-hidden
+                                                    fill
+                                                    className="object-contain"
+                                                    unoptimized
+                                                />
+                                            ) : (
+                                                <span
+                                                    aria-hidden
+                                                    className="size-2.5 rounded-full bg-primary"
+                                                />
+                                            )}
                                         </div>
                                         <span className="text-lg text-muted-foreground hover:text-foreground transition-colors cursor-default">
                                             {item.name}
